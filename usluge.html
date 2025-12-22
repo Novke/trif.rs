@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usluge - 3F Solutions</title>
+    <link rel="icon" type="image/svg+xml" href="resources/logo.svg">
+    <link rel="icon" type="image/png" href="resources/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-gradient"></div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="resources/logo.svg" alt="3F Solutions Logo"></a>
+        </div>
+
+        <div class="nav-menu">
+            <a href="index.html" class="nav-link">3F</a>
+            <a href="o-nama.html" class="nav-link">O Nama</a>
+            <a href="usluge.html" class="nav-link active">Usluge</a>
+        </div>
+
+        <a href="#rezervisi" class="btn btn-primary">Rezerviši Termin</a>
+    </nav>
+
+    <main class="services-page">
+        <div class="services-header animate-fade-up">
+            <h1 class="services-title">Naše <span class="highlight">Usluge</span></h1>
+            <p class="services-subtitle">Kompletan tim za vaš digitalni uspeh</p>
+        </div>
+
+        <!-- Collaboration Banner -->
+        <div class="collab-banner animate-fade-up delay-1">
+            <div class="collab-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+            </div>
+            <p>Radimo kao <span class="highlight">tim</span> — Boško dizajnira UI/UX, Novica programira, Steva piše prodajne tekstove. Zajedno stvaramo kompletna digitalna rešenja.</p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="services-grid">
+
+            <!-- Software Development -->
+            <div class="service-category animate-fade-up delay-2">
+                <div class="category-header">
+                    <div class="category-icon software">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16,18 22,12 16,6"></polyline>
+                            <polyline points="8,6 2,12 8,18"></polyline>
+                        </svg>
+                    </div>
+                    <div class="category-info">
+                        <h2 class="category-title">Software Development</h2>
+                        <span class="category-author">Novica</span>
+                    </div>
+                </div>
+
+                <div class="service-items">
+                    <div class="service-item">
+                        <h3>Backend Development</h3>
+                        <p>Spring Boot, Java, Python, REST API, Microservices arhitektura</p>
+                        <div class="tech-tags">
+                            <span>Spring Boot</span>
+                            <span>Java</span>
+                            <span>Python</span>
+                            <span>REST API</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <h3>Web Aplikacije</h3>
+                        <p>Full-stack rešenja sa Angular frontendom i skalabilnim backendom</p>
+                        <div class="tech-tags">
+                            <span>Angular</span>
+                            <span>TypeScript</span>
+                            <span>PostgreSQL</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <h3>AI Integracije</h3>
+                        <p>LLM integracija, prompt engineering, automatizacija sa AI, MCP</p>
+                        <div class="tech-tags">
+                            <span>LLM</span>
+                            <span>Claude</span>
+                            <span>OpenAI</span>
+                            <span>FastAPI</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <h3>DevOps & Cloud</h3>
+                        <p>Docker kontejnerizacija, CI/CD pipeline, Google Cloud, AWS deployment</p>
+                        <div class="tech-tags">
+                            <span>Docker</span>
+                            <span>CI/CD</span>
+                            <span>Google Cloud</span>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <h3>Automatizacija Procesa</h3>
+                        <p>Python skripte, workflow optimizacija, custom alati za uštedu vremena</p>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>Scripting</span>
+                            <span>Automation</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <h3>Consulting</h3>
+                        <p>Arhitekturalni saveti, code review, tehnička procena projekata</p>
+                        <div class="tech-tags">
+                            <span>Architecture</span>
+                            <span>SOLID</span>
+                            <span>Microservices</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design -->
+            <div class="service-category animate-fade-up delay-3">
+                <div class="category-header">
+                    <div class="category-icon design">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="13.5" cy="6.5" r="2.5"></circle>
+                            <circle cx="19" cy="17" r="2"></circle>
+                            <circle cx="6" cy="12" r="3"></circle>
+                            <path d="M12 22s8-4 8-12-8-8-8-8-8 0-8 8 8 12 8 12z"></path>
+                        </svg>
+                    </div>
+                    <div class="category-info">
+                        <h2 class="category-title">Dizajn & Vizuali</h2>
+                        <span class="category-author">Boško</span>
+                    </div>
+                </div>
+
+                <div class="service-items">
+                    <div class="service-item">
+                        <h3>UI/UX Dizajn</h3>
+                        <p>Korisnički interfejsi, wireframes, prototipi, user experience optimizacija</p>
+                        <div class="tech-tags">
+                            <span>Figma</span>
+                            <span>UI Design</span>
+                            <span>Prototyping</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <h3>Branding & Logo</h3>
+                        <p>Vizualni identitet, logo dizajn, brand guidelines</p>
+                        <div class="tech-tags">
+                            <span>Illustrator</span>
+                            <span>Brand Identity</span>
+                            <span>Logo</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <h3>Animacije</h3>
+                        <p>Motion graphics, animirani sadržaj za web i social media</p>
+                        <div class="tech-tags">
+                            <span>After Effects</span>
+                            <span>Motion Design</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <h3>Video Editing</h3>
+                        <p>Profesionalna montaža, color grading, post produkcija</p>
+                        <div class="tech-tags">
+                            <span>Premiere Pro</span>
+                            <span>Color Grading</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <h3>NFT & Web3</h3>
+                        <p>NFT kolekcije, Web3 vizuali, digitalna umetnost</p>
+                        <div class="tech-tags">
+                            <span>NFT</span>
+                            <span>Web3</span>
+                            <span>Digital Art</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <h3>Digitalni Vizuali</h3>
+                        <p>Social media grafike, banneri, marketing materijali</p>
+                        <div class="tech-tags">
+                            <span>Photoshop</span>
+                            <span>Social Media</span>
+                            <span>Marketing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copywriting -->
+            <div class="service-category animate-fade-up delay-4">
+                <div class="category-header">
+                    <div class="category-icon copy">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                            <path d="M2 2l7.586 7.586"></path>
+                            <circle cx="11" cy="11" r="2"></circle>
+                        </svg>
+                    </div>
+                    <div class="category-info">
+                        <h2 class="category-title">Copywriting & Strategija</h2>
+                        <span class="category-author">Steva</span>
+                    </div>
+                </div>
+
+                <div class="service-items">
+                    <div class="service-item">
+                        <h3>E-commerce Copy</h3>
+                        <p>Prodajni tekstovi koji konvertuju, opisi proizvoda, landing page copy</p>
+                        <div class="tech-tags">
+                            <span>Sales Copy</span>
+                            <span>Conversion</span>
+                            <span>E-commerce</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <h3>Email Marketing</h3>
+                        <p>Email sekvence, newsletter strategije, automatizacija kampanja</p>
+                        <div class="tech-tags">
+                            <span>Email Sequences</span>
+                            <span>Newsletters</span>
+                            <span>Automation</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <h3>Offer Creation</h3>
+                        <p>Kreiranje neodoljivih ponuda, pricing strategije, value proposition</p>
+                        <div class="tech-tags">
+                            <span>Offer Design</span>
+                            <span>Pricing</span>
+                            <span>Strategy</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <h3>Revenue Strategy</h3>
+                        <p>Email revenue optimizacija, funnel copy, upsell strategije</p>
+                        <div class="tech-tags">
+                            <span>Revenue</span>
+                            <span>Funnels</span>
+                            <span>Upsells</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Projects Section -->
+        <div class="team-projects animate-fade-up">
+            <h2 class="section-title">Zajedno stvaramo <span class="highlight">više</span></h2>
+            <div class="project-examples">
+                <div class="project-example">
+                    <div class="project-flow">
+                        <span class="flow-step design">Boško</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-step software">Novica</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-step copy">Steva</span>
+                    </div>
+                    <h3>Kompletna Web Aplikacija</h3>
+                    <p>UI/UX dizajn → Full-stack development → Prodajni tekstovi i marketing copy</p>
+                </div>
+
+                <div class="project-example">
+                    <div class="project-flow">
+                        <span class="flow-step copy">Steva</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-step design">Boško</span>
+                    </div>
+                    <h3>Marketing Kampanja</h3>
+                    <p>Copywriting strategija → Vizualni materijali i animacije</p>
+                </div>
+
+                <div class="project-example">
+                    <div class="project-flow">
+                        <span class="flow-step design">Boško</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-step software">Novica</span>
+                    </div>
+                    <h3>Web Sajt</h3>
+                    <p>Dizajn i branding → Frontend implementacija i deployment</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="star-decoration">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" fill="rgba(255,255,255,0.6)"/>
+        </svg>
+    </div>
+</body>
+</html>

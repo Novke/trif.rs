@@ -343,6 +343,241 @@ body {
     transform: none;
 }
 
+/* Services Page */
+.services-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 48px 80px;
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.services-title {
+    font-size: clamp(36px, 6vw, 56px);
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.services-subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Collaboration Banner */
+.collab-banner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(17, 206, 206, 0.05);
+    border: 1px solid rgba(17, 206, 206, 0.2);
+    border-radius: 16px;
+    padding: 20px 28px;
+    margin-bottom: 60px;
+}
+
+.collab-icon {
+    flex-shrink: 0;
+    color: #11cece;
+}
+
+.collab-banner p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+/* Services Grid */
+.services-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.service-category {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 32px;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.category-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-icon.software {
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+}
+
+.category-icon.design {
+    background: rgba(236, 72, 153, 0.15);
+    color: #f472b6;
+}
+
+.category-icon.copy {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+}
+
+.category-info {
+    flex: 1;
+}
+
+.category-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.category-author {
+    font-size: 14px;
+    color: #11cece;
+    font-weight: 500;
+}
+
+.service-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.service-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.service-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-4px);
+}
+
+.service-item h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.service-item p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tech-tags span {
+    font-size: 11px;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Team Projects Section */
+.team-projects {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.project-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.project-example {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 28px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.project-example:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(17, 206, 206, 0.3);
+}
+
+.project-flow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.flow-step {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.flow-step.software {
+    background: rgba(99, 102, 241, 0.2);
+    color: #818cf8;
+}
+
+.flow-step.design {
+    background: rgba(236, 72, 153, 0.2);
+    color: #f472b6;
+}
+
+.flow-step.copy {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+}
+
+.flow-arrow {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 14px;
+}
+
+.project-example h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.project-example p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+}
+
 /* Animations */
 @keyframes fadeUp {
     from {
@@ -469,5 +704,40 @@ body {
     .member-image {
         width: 140px;
         height: 140px;
+    }
+
+    .services-page {
+        padding: 40px 24px 60px;
+    }
+
+    .collab-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .service-category {
+        padding: 20px;
+    }
+
+    .category-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-items {
+        grid-template-columns: 1fr;
+    }
+
+    .project-examples {
+        grid-template-columns: 1fr;
+    }
+
+    .project-flow {
+        justify-content: center;
+    }
+
+    .project-example {
+        text-align: center;
     }
 }
