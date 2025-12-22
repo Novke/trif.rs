@@ -31,40 +31,52 @@
     <main class="services-page">
         <div class="services-header animate-fade-up">
             <h1 class="services-title">Naše <span class="highlight">Usluge</span></h1>
-            <p class="services-subtitle">Kompletan tim za vaš digitalni uspeh</p>
+            <p class="services-subtitle">Izaberite kategoriju da vidite detalje</p>
         </div>
 
-        <!-- Collaboration Banner -->
-        <div class="collab-banner animate-fade-up delay-1">
-            <div class="collab-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-            </div>
-            <p>Radimo kao <span class="highlight">tim</span> — Boško dizajnira UI/UX, Novica programira, Steva piše prodajne tekstove. Zajedno stvaramo kompletna digitalna rešenja.</p>
-        </div>
-
-        <!-- Services Grid -->
-        <div class="services-grid">
-
-            <!-- Software Development -->
-            <div class="service-category animate-fade-up delay-2">
-                <div class="category-header">
-                    <div class="category-icon software">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="16,18 22,12 16,6"></polyline>
-                            <polyline points="8,6 2,12 8,18"></polyline>
-                        </svg>
-                    </div>
-                    <div class="category-info">
-                        <h2 class="category-title">Software Development</h2>
-                        <span class="category-author">Novica</span>
-                    </div>
+        <!-- Service Selector - 3 Balloons -->
+        <div class="service-selector animate-fade-up delay-1">
+            <div class="service-balloon active" data-target="software">
+                <div class="balloon-icon software">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16,18 22,12 16,6"></polyline>
+                        <polyline points="8,6 2,12 8,18"></polyline>
+                    </svg>
                 </div>
+                <h3>Software</h3>
+                <p class="balloon-author">Novica</p>
+                <p class="balloon-desc">Web aplikacije, AI, DevOps</p>
+            </div>
 
+            <div class="service-balloon" data-target="design">
+                <div class="balloon-icon design">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="12" r="6"></circle>
+                        <circle cx="12" cy="12" r="2"></circle>
+                    </svg>
+                </div>
+                <h3>Dizajn</h3>
+                <p class="balloon-author">Boško</p>
+                <p class="balloon-desc">UI/UX, animacije, video</p>
+            </div>
+
+            <div class="service-balloon" data-target="copy">
+                <div class="balloon-icon copy">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                    </svg>
+                </div>
+                <h3>Copywriting</h3>
+                <p class="balloon-author">Steva</p>
+                <p class="balloon-desc">Prodajni tekstovi, email</p>
+            </div>
+        </div>
+
+        <!-- Service Details - Hidden by default, shown on click -->
+        <div class="service-details">
+            <!-- Software Development -->
+            <div class="service-category active" id="software">
                 <div class="service-items">
                     <div class="service-item">
                         <h3>Backend Development</h3>
@@ -133,22 +145,7 @@
             </div>
 
             <!-- Design -->
-            <div class="service-category animate-fade-up delay-3">
-                <div class="category-header">
-                    <div class="category-icon design">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="13.5" cy="6.5" r="2.5"></circle>
-                            <circle cx="19" cy="17" r="2"></circle>
-                            <circle cx="6" cy="12" r="3"></circle>
-                            <path d="M12 22s8-4 8-12-8-8-8-8-8 0-8 8 8 12 8 12z"></path>
-                        </svg>
-                    </div>
-                    <div class="category-info">
-                        <h2 class="category-title">Dizajn & Vizuali</h2>
-                        <span class="category-author">Boško</span>
-                    </div>
-                </div>
-
+            <div class="service-category" id="design">
                 <div class="service-items">
                     <div class="service-item">
                         <h3>UI/UX Dizajn</h3>
@@ -211,22 +208,7 @@
             </div>
 
             <!-- Copywriting -->
-            <div class="service-category animate-fade-up delay-4">
-                <div class="category-header">
-                    <div class="category-icon copy">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-                            <path d="M2 2l7.586 7.586"></path>
-                            <circle cx="11" cy="11" r="2"></circle>
-                        </svg>
-                    </div>
-                    <div class="category-info">
-                        <h2 class="category-title">Copywriting & Strategija</h2>
-                        <span class="category-author">Steva</span>
-                    </div>
-                </div>
-
+            <div class="service-category" id="copy">
                 <div class="service-items">
                     <div class="service-item">
                         <h3>E-commerce Copy</h3>
@@ -274,6 +256,7 @@
         <!-- Team Projects Section -->
         <div class="team-projects animate-fade-up">
             <h2 class="section-title">Zajedno stvaramo <span class="highlight">više</span></h2>
+            <p class="section-subtitle">Komplementarne veštine za sve potrebe vašeg projekta</p>
             <div class="project-examples">
                 <div class="project-example">
                     <div class="project-flow">
@@ -315,5 +298,23 @@
             <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" fill="rgba(255,255,255,0.6)"/>
         </svg>
     </div>
+
+    <script>
+        // Service balloon click handler
+        document.querySelectorAll('.service-balloon').forEach(balloon => {
+            balloon.addEventListener('click', () => {
+                // Remove active from all balloons
+                document.querySelectorAll('.service-balloon').forEach(b => b.classList.remove('active'));
+                // Add active to clicked balloon
+                balloon.classList.add('active');
+
+                // Hide all service categories
+                document.querySelectorAll('.service-category').forEach(cat => cat.classList.remove('active'));
+                // Show the target category
+                const target = balloon.dataset.target;
+                document.getElementById(target).classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>

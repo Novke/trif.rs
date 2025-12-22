@@ -366,6 +366,122 @@ body {
     color: rgba(255, 255, 255, 0.5);
 }
 
+/* Service Selector Balloons */
+.service-selector {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+}
+
+.service-balloon {
+    background: rgba(255, 255, 255, 0.02);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 28px 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    width: 200px;
+}
+
+.service-balloon:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-8px);
+}
+
+.service-balloon.active {
+    border-color: #11cece;
+    background: rgba(17, 206, 206, 0.08);
+    box-shadow: 0 0 40px rgba(17, 206, 206, 0.2);
+}
+
+.balloon-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    transition: all 0.3s ease;
+}
+
+.balloon-icon.software {
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+}
+
+.balloon-icon.design {
+    background: rgba(236, 72, 153, 0.15);
+    color: #f472b6;
+}
+
+.balloon-icon.copy {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+}
+
+.service-balloon.active .balloon-icon.software {
+    background: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+}
+
+.service-balloon.active .balloon-icon.design {
+    background: rgba(236, 72, 153, 0.3);
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.3);
+}
+
+.service-balloon.active .balloon-icon.copy {
+    background: rgba(34, 197, 94, 0.3);
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
+}
+
+.service-balloon h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.balloon-author {
+    font-size: 13px;
+    color: #11cece;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.balloon-desc {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Service Details */
+.service-details {
+    margin-bottom: 48px;
+}
+
+.service-details .service-category {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.service-details .service-category.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Collaboration Banner */
 .collab-banner {
     display: flex;
@@ -397,65 +513,14 @@ body {
 }
 
 .service-category {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 20px;
-    padding: 32px;
-}
-
-.category-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 28px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.category-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.category-icon.software {
-    background: rgba(99, 102, 241, 0.15);
-    color: #818cf8;
-}
-
-.category-icon.design {
-    background: rgba(236, 72, 153, 0.15);
-    color: #f472b6;
-}
-
-.category-icon.copy {
-    background: rgba(34, 197, 94, 0.15);
-    color: #4ade80;
-}
-
-.category-info {
-    flex: 1;
-}
-
-.category-title {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.category-author {
-    font-size: 14px;
-    color: #11cece;
-    font-weight: 500;
+    /* No background/border - clean look */
 }
 
 .service-items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
+    justify-items: center;
 }
 
 .service-item {
@@ -464,6 +529,8 @@ body {
     border-radius: 12px;
     padding: 20px;
     transition: all 0.3s ease;
+    width: 100%;
+    max-width: 320px;
 }
 
 .service-item:hover {
@@ -508,6 +575,12 @@ body {
 .section-title {
     font-size: clamp(28px, 4vw, 40px);
     font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
     margin-bottom: 40px;
 }
 
@@ -708,6 +781,26 @@ body {
 
     .services-page {
         padding: 40px 24px 60px;
+    }
+
+    .service-selector {
+        gap: 16px;
+    }
+
+    .service-balloon {
+        width: 100%;
+        max-width: 280px;
+        padding: 20px;
+    }
+
+    .balloon-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .balloon-icon svg {
+        width: 24px;
+        height: 24px;
     }
 
     .collab-banner {
