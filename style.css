@@ -303,6 +303,46 @@ body {
     line-height: 1.6;
 }
 
+.member-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.member-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.member-link:hover {
+    background: rgba(17, 206, 206, 0.15);
+    border-color: #11cece;
+    color: #11cece;
+    transform: translateY(-3px);
+}
+
+.member-link.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.member-link.disabled:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    transform: none;
+}
+
 /* Animations */
 @keyframes fadeUp {
     from {
