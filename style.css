@@ -223,6 +223,119 @@ body {
     flex-wrap: wrap;
 }
 
+/* About Page */
+.about-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 48px;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.about-title {
+    font-size: clamp(36px, 6vw, 56px);
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.about-subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Team Grid */
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    text-align: center;
+    max-width: 280px;
+}
+
+.member-image {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(17, 206, 206, 0.3);
+    box-shadow: 0 0 40px rgba(17, 206, 206, 0.2);
+    transition: all 0.4s ease;
+}
+
+.member-image:hover {
+    border-color: #11cece;
+    box-shadow: 0 0 60px rgba(17, 206, 206, 0.4);
+    transform: scale(1.05);
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.member-role {
+    font-size: 14px;
+    color: #11cece;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+.member-description {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-up {
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.4s;
+}
+
+.delay-4 {
+    animation-delay: 0.6s;
+}
+
 /* Star decoration */
 .star-decoration {
     position: fixed;
@@ -299,5 +412,22 @@ body {
 
     .hero-logo img {
         max-width: 200px;
+    }
+
+    .about-page {
+        padding: 40px 24px;
+    }
+
+    .about-header {
+        margin-bottom: 48px;
+    }
+
+    .team-grid {
+        gap: 40px;
+    }
+
+    .member-image {
+        width: 140px;
+        height: 140px;
     }
 }
