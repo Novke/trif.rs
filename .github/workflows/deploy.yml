@@ -24,7 +24,7 @@ jobs:
 
       - name: Deploy to Hetzner
         run: |
-          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /srv/sites/trif && git pull origin main"
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /srv/sites/trif/trif.rs && git pull origin main"
 
       - name: Cleanup SSH Key
         if: always()
