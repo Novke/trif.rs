@@ -12,6 +12,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Intro Animation Overlay -->
+    <div id="intro-overlay" class="intro-overlay">
+        <div class="intro-content">
+            <video id="intro-video" muted playsinline>
+                <source src="resources/animations/trif.webm" type="video/webm">
+            </video>
+            <div id="intro-text" class="intro-text">
+                <p>Learn how we can help you grow</p>
+            </div>
+        </div>
+        <div id="intro-skip" class="intro-skip">Click anywhere to continue</div>
+    </div>
+
     <div class="background-gradient"></div>
 
     <nav class="navbar">
@@ -61,5 +74,47 @@
             <path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z" fill="rgba(255,255,255,0.6)"/>
         </svg>
     </div>
+
+    <script>
+        (function() {
+            const overlay = document.getElementById('intro-overlay');
+            const video = document.getElementById('intro-video');
+            const introText = document.getElementById('intro-text');
+            const skipText = document.getElementById('intro-skip');
+
+            // Check if user has seen intro before
+            if (sessionStorage.getItem('introSeen')) {
+                overlay.style.display = 'none';
+                return;
+            }
+
+            // Play video when loaded
+            video.addEventListener('loadeddata', function() {
+                video.play();
+            });
+
+            // Show text when video ends
+            video.addEventListener('ended', function() {
+                introText.classList.add('visible');
+                skipText.classList.add('visible');
+            });
+
+            // Click anywhere to dismiss
+            overlay.addEventListener('click', function() {
+                overlay.classList.add('fade-out');
+                sessionStorage.setItem('introSeen', 'true');
+                setTimeout(function() {
+                    overlay.style.display = 'none';
+                }, 600);
+            });
+
+            // Allow skip with any key
+            document.addEventListener('keydown', function(e) {
+                if (overlay.style.display !== 'none') {
+                    overlay.click();
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
