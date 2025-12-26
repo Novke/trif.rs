@@ -9,21 +9,18 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Intro Animation Overlay -->
     <div id="intro-overlay" class="intro-overlay">
         <div class="intro-content">
             <div id="intro-text-top" class="intro-text-top">
-                <p>Learn how we can help you grow</p>
+                <p>Learn how we can help you <span id="rotating-word" class="rotating-word"></span></p>
             </div>
             <video id="intro-video" muted playsinline>
                 <source src="resources/animations/trif.webm" type="video/webm">
             </video>
-            <div id="intro-tagline" class="intro-tagline">
-                <p></p>
-            </div>
         </div>
         <div id="intro-skip" class="intro-skip">Click anywhere to continue</div>
     </div>
@@ -78,27 +75,24 @@
             const overlay = document.getElementById('intro-overlay');
             const video = document.getElementById('intro-video');
             const introTextTop = document.getElementById('intro-text-top');
-            const introTagline = document.getElementById('intro-tagline');
-            const taglineText = introTagline.querySelector('p');
+            const rotatingWord = document.getElementById('rotating-word');
             const skipText = document.getElementById('intro-skip');
 
-            const taglines = [
-                "Great design grabs attention, great copy closes the deal.",
-                "Save hours every day with smarter systems.",
-                "Remove obstacles before users hit them.",
-                "Stop losing customers to confusing design.",
-                "Turn traffic into revenue.",
-                "Generate leads that convert.",
-                "Sell the result, not the product.",
-                "Automate what slows you down.",
-                "Improve user experience across the board.",
-                "Make your offer irresistible, not forgettable.",
-                "Growth starts with a clear plan.",
-                "Scale without hiring more people."
+            const words = [
+                "grow",
+                "scale",
+                "convert",
+                "automate",
+                "stand out",
+                "save time",
+                "sell more",
+                "get leads",
+                "build trust",
+                "look premium"
             ];
 
-            let taglineIndex = 0;
-            let taglineInterval = null;
+            let wordIndex = 0;
+            let wordInterval = null;
 
             // Check if user has seen intro before
             if (sessionStorage.getItem('introSeen')) {
@@ -116,35 +110,33 @@
                 const progress = video.currentTime / video.duration;
                 if (progress >= 0.5 && !introTextTop.classList.contains('visible')) {
                     introTextTop.classList.add('visible');
+                    // Show first word
+                    rotatingWord.textContent = words[0];
+                    rotatingWord.classList.add('animate-in');
                 }
             });
 
-            // Show taglines when video ends
+            // Start rotating words when video ends
             video.addEventListener('ended', function() {
                 skipText.classList.add('visible');
-                introTagline.classList.add('visible');
 
-                // Show first tagline
-                taglineText.textContent = taglines[0];
-                taglineText.classList.add('animate-in');
-
-                // Rotate taglines every 3 seconds
-                taglineInterval = setInterval(function() {
-                    taglineText.classList.remove('animate-in');
-                    taglineText.classList.add('animate-out');
+                // Rotate words every 2 seconds
+                wordInterval = setInterval(function() {
+                    rotatingWord.classList.remove('animate-in');
+                    rotatingWord.classList.add('animate-out');
 
                     setTimeout(function() {
-                        taglineIndex = (taglineIndex + 1) % taglines.length;
-                        taglineText.textContent = taglines[taglineIndex];
-                        taglineText.classList.remove('animate-out');
-                        taglineText.classList.add('animate-in');
-                    }, 400);
-                }, 3000);
+                        wordIndex = (wordIndex + 1) % words.length;
+                        rotatingWord.textContent = words[wordIndex];
+                        rotatingWord.classList.remove('animate-out');
+                        rotatingWord.classList.add('animate-in');
+                    }, 300);
+                }, 2000);
             });
 
             // Click anywhere to dismiss
             overlay.addEventListener('click', function() {
-                if (taglineInterval) clearInterval(taglineInterval);
+                if (wordInterval) clearInterval(wordInterval);
                 overlay.classList.add('fade-out');
                 sessionStorage.setItem('introSeen', 'true');
                 setTimeout(function() {
