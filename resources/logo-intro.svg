@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1022">
+  <defs>
+    <style>
+      .bar {
+        fill: #11cece;
+      }
+
+      /* Vertical bars - start spread out, then compress to final positions */
+      .v1 {
+        animation: moveV1 2s ease-in-out forwards;
+      }
+      .v2 {
+        animation: moveV2 2s ease-in-out forwards;
+      }
+      .v3 {
+        /* stays in place */
+      }
+
+      /* Horizontal bars that disappear - left and middle F */
+      .h-fade {
+        transform-origin: left center;
+        animation: fadeOut 1.8s ease-in-out forwards;
+      }
+      .h-fade.d1 { animation-delay: 0.2s; }
+      .h-fade.d2 { animation-delay: 0.4s; }
+      .h-fade.d3 { animation-delay: 0.6s; }
+      .h-fade.d4 { animation-delay: 0.8s; }
+
+      @keyframes moveV1 {
+        0% { transform: translateX(-246px); }
+        100% { transform: translateX(0); }
+      }
+
+      @keyframes moveV2 {
+        0% { transform: translateX(-123px); }
+        100% { transform: translateX(0); }
+      }
+
+      @keyframes fadeOut {
+        0% { opacity: 1; transform: scaleX(1); }
+        100% { opacity: 0; transform: scaleX(0); }
+      }
+    </style>
+    <filter id="outer-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur result="blur" stdDeviation="13"/>
+      <feFlood flood-color="#97d7ff" flood-opacity=".24"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#outer-glow)">
+    <!-- VERTICALS (exact from logo.svg) -->
+    <rect class="bar v1" x="200.34" y="305.69" width="52.36" height="427.75"/>
+    <rect class="bar v2" x="324.26" y="222" width="52.36" height="595.13"/>
+    <rect class="bar v3" x="446.22" y="155.06" width="52.36" height="711.88"/>
+
+    <!-- LEFT F horizontals (fade out) - between v1 and v2 -->
+    <rect class="bar h-fade d1" x="252.7" y="305.69" width="71.56" height="52.36"/>
+    <rect class="bar h-fade d2" x="252.7" y="500" width="51" height="52.36"/>
+
+    <!-- MIDDLE F horizontals (fade out) - between v2 and v3 -->
+    <rect class="bar h-fade d3" x="376.62" y="222" width="69.6" height="52.36"/>
+    <rect class="bar h-fade d4" x="376.62" y="451.02" width="50" height="52.36"/>
+
+    <!-- RIGHT F horizontals (stay visible - EXACT from logo.svg) -->
+    <rect class="bar" x="566.81" y="155.26" width="312.85" height="52.36"/>
+    <rect class="bar" x="566.81" y="451.02" width="223.33" height="52.36"/>
+  </g>
+</svg>

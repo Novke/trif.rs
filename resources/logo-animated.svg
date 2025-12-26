@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1080 1022">
+  <defs>
+    <style>
+      .vertical {
+        fill: #11cece;
+      }
+      .horizontal {
+        fill: #11cece;
+        animation: breathe 3s ease-in-out infinite;
+      }
+      .horizontal:nth-of-type(2) {
+        animation-delay: 0.5s;
+      }
+      @keyframes breathe {
+        0%, 100% {
+          fill: #11cece;
+        }
+        50% {
+          fill: #ffffff;
+        }
+      }
+    </style>
+    <filter id="outer-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur result="blur" stdDeviation="13"/>
+      <feFlood flood-color="#97d7ff" flood-opacity=".24"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g filter="url(#outer-glow)">
+    <!-- Vertical lines - static teal -->
+    <rect class="vertical" x="200.34" y="305.69" width="52.36" height="427.75"/>
+    <rect class="vertical" x="324.26" y="222" width="52.36" height="595.13"/>
+    <rect class="vertical" x="446.22" y="155.06" width="52.36" height="711.88"/>
+    <!-- Horizontal lines - breathing animation -->
+    <rect class="horizontal" x="566.81" y="155.26" width="312.85" height="52.36"/>
+    <rect class="horizontal" x="566.81" y="451.02" width="223.33" height="52.36"/>
+  </g>
+</svg>

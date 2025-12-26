@@ -43,6 +43,28 @@
     position: absolute;
     top: 0;
     left: 0;
+    transition: opacity 1s ease;
+    z-index: 2;
+}
+
+.intro-overlay video.fade-out {
+    opacity: 0;
+}
+
+.intro-logo-static {
+    position: absolute;
+    top: 46.5%;
+    left: 49.5%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.intro-logo-static.visible {
+    opacity: 1;
 }
 
 /* Text below logo */

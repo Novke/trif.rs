@@ -21,6 +21,7 @@
             <video id="intro-video" muted playsinline>
                 <source src="resources/animations/trif.webm" type="video/webm">
             </video>
+            <img id="intro-logo-static" class="intro-logo-static" src="resources/logo-animated.svg" alt="3F Logo">
         </div>
         <div id="intro-skip" class="intro-skip">Click anywhere to continue</div>
     </div>
@@ -119,6 +120,12 @@
             // Start rotating words when video ends
             video.addEventListener('ended', function() {
                 skipText.classList.add('visible');
+
+                // Fade out video and show static logo
+                video.classList.add('fade-out');
+                setTimeout(function() {
+                    document.getElementById('intro-logo-static').classList.add('visible');
+                }, 500);
 
                 // Rotate words every 2 seconds
                 wordInterval = setInterval(function() {
