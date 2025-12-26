@@ -15,11 +15,14 @@
     <!-- Intro Animation Overlay -->
     <div id="intro-overlay" class="intro-overlay">
         <div class="intro-content">
+            <div id="intro-text-top" class="intro-text-top">
+                <p>Learn how we can help you grow</p>
+            </div>
             <video id="intro-video" muted playsinline>
                 <source src="resources/animations/trif.webm" type="video/webm">
             </video>
-            <div id="intro-text" class="intro-text">
-                <p>Learn how we can help you grow</p>
+            <div id="intro-tagline" class="intro-tagline">
+                <p></p>
             </div>
         </div>
         <div id="intro-skip" class="intro-skip">Click anywhere to continue</div>
@@ -79,8 +82,28 @@
         (function() {
             const overlay = document.getElementById('intro-overlay');
             const video = document.getElementById('intro-video');
-            const introText = document.getElementById('intro-text');
+            const introTextTop = document.getElementById('intro-text-top');
+            const introTagline = document.getElementById('intro-tagline');
+            const taglineText = introTagline.querySelector('p');
             const skipText = document.getElementById('intro-skip');
+
+            const taglines = [
+                "Great design grabs attention, great copy closes the deal.",
+                "Save hours every day with smarter systems.",
+                "Remove obstacles before users hit them.",
+                "Stop losing customers to confusing design.",
+                "Turn traffic into revenue.",
+                "Generate leads that convert.",
+                "Sell the result, not the product.",
+                "Automate what slows you down.",
+                "Improve user experience across the board.",
+                "Make your offer irresistible, not forgettable.",
+                "Growth starts with a clear plan.",
+                "Scale without hiring more people."
+            ];
+
+            let taglineIndex = 0;
+            let taglineInterval = null;
 
             // Check if user has seen intro before
             if (sessionStorage.getItem('introSeen')) {
@@ -93,14 +116,40 @@
                 video.play();
             });
 
-            // Show text when video ends
+            // Show top text earlier (at 50% of video)
+            video.addEventListener('timeupdate', function() {
+                const progress = video.currentTime / video.duration;
+                if (progress >= 0.5 && !introTextTop.classList.contains('visible')) {
+                    introTextTop.classList.add('visible');
+                }
+            });
+
+            // Show taglines when video ends
             video.addEventListener('ended', function() {
-                introText.classList.add('visible');
                 skipText.classList.add('visible');
+                introTagline.classList.add('visible');
+
+                // Show first tagline
+                taglineText.textContent = taglines[0];
+                taglineText.classList.add('animate-in');
+
+                // Rotate taglines every 3 seconds
+                taglineInterval = setInterval(function() {
+                    taglineText.classList.remove('animate-in');
+                    taglineText.classList.add('animate-out');
+
+                    setTimeout(function() {
+                        taglineIndex = (taglineIndex + 1) % taglines.length;
+                        taglineText.textContent = taglines[taglineIndex];
+                        taglineText.classList.remove('animate-out');
+                        taglineText.classList.add('animate-in');
+                    }, 400);
+                }, 3000);
             });
 
             // Click anywhere to dismiss
             overlay.addEventListener('click', function() {
+                if (taglineInterval) clearInterval(taglineInterval);
                 overlay.classList.add('fade-out');
                 sessionStorage.setItem('introSeen', 'true');
                 setTimeout(function() {

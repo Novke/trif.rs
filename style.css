@@ -30,35 +30,99 @@
     position: relative;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .intro-overlay video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.intro-text {
+/* Text above logo */
+.intro-text-top {
     position: absolute;
-    bottom: 20%;
+    top: 18%;
     left: 50%;
-    transform: translateX(-50%) translateY(20px);
+    transform: translateX(-50%) translateY(-20px);
     opacity: 0;
     transition: all 0.8s ease;
     text-align: center;
     z-index: 10;
 }
 
-.intro-text.visible {
+.intro-text-top.visible {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
 
-.intro-text p {
-    font-size: clamp(18px, 4vw, 28px);
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
+.intro-text-top p {
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: 600;
+    color: #ffffff;
     letter-spacing: 0.02em;
+}
+
+/* Rotating taglines below logo */
+.intro-tagline {
+    position: absolute;
+    bottom: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    text-align: center;
+    z-index: 10;
+    width: 90%;
+    max-width: 700px;
+}
+
+.intro-tagline.visible {
+    opacity: 1;
+}
+
+.intro-tagline p {
+    font-size: clamp(16px, 3vw, 24px);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+}
+
+.intro-tagline p.animate-in {
+    animation: taglineIn 0.4s ease forwards;
+}
+
+.intro-tagline p.animate-out {
+    animation: taglineOut 0.4s ease forwards;
+}
+
+@keyframes taglineIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes taglineOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
 }
 
 .intro-skip {
