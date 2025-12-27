@@ -121,24 +121,51 @@
 
     <script>
         (function() {
+            // ============================================
+            // CONFIGURATION - Edit these values easily
+            // ============================================
+            const CONFIG = {
+                // Parallax speeds (higher = faster movement when scrolling)
+                parallax: {
+                    layer1: 0.8,   // Closest layer - moves fastest
+                    layer2: 0.4,   // Medium layer
+                    layer3: 0.15   // Farthest layer - moves slowest
+                },
+
+                // Star counts per layer
+                starCount: {
+                    layer1: 50,    // Fewer big stars (closest)
+                    layer2: 120,   // Medium amount
+                    layer3: 250    // Many small distant stars
+                },
+
+                // Star behavior percentages (0.0 to 1.0)
+                effects: {
+                    twinkleChance: 0.30,   // 30% of stars twinkle
+                    driftChance: 0.40      // 40% of stars drift left/right
+                },
+
+                // Twinkle animation settings
+                twinkle: {
+                    durationMin: 2,        // Minimum seconds
+                    durationMax: 5,        // Maximum seconds
+                    delayMax: 5            // Maximum delay before starting
+                },
+
+                // Drift animation settings
+                drift: {
+                    durationMin: 8,        // Minimum seconds for one drift cycle
+                    durationMax: 20,       // Maximum seconds
+                    delayMax: 5,           // Maximum delay before starting
+                    distance: 30           // Max pixels to drift
+                }
+            };
+            // ============================================
+
             const layer1 = document.getElementById('layer1');
             const layer2 = document.getElementById('layer2');
             const layer3 = document.getElementById('layer3');
             const progressBar = document.getElementById('progress-bar');
-
-            // Parallax speeds (higher = faster movement)
-            const speeds = {
-                layer1: 0.8,  // Closest - moves fastest
-                layer2: 0.4,  // Medium
-                layer3: 0.15  // Farthest - moves slowest
-            };
-
-            // Star counts per layer
-            const starCounts = {
-                layer1: 50,   // Fewer big stars
-                layer2: 120,  // Medium amount
-                layer3: 250   // Many small distant stars
-            };
 
             // Generate random stars for a layer
             function generateStars(layer, count) {
@@ -154,30 +181,67 @@
                     const sizeVariation = 0.5 + Math.random() * 1;
                     star.style.transform = `scale(${sizeVariation})`;
 
-                    // Slight twinkle effect with random animation delay
-                    if (Math.random() > 0.7) {
-                        star.style.animation = `twinkle ${2 + Math.random() * 3}s infinite`;
-                        star.style.animationDelay = Math.random() * 5 + 's';
+                    // Twinkle effect based on CONFIG
+                    if (Math.random() < CONFIG.effects.twinkleChance) {
+                        const twinkleDuration = CONFIG.twinkle.durationMin + Math.random() * (CONFIG.twinkle.durationMax - CONFIG.twinkle.durationMin);
+                        star.style.animation = `twinkle ${twinkleDuration}s infinite`;
+                        star.style.animationDelay = Math.random() * CONFIG.twinkle.delayMax + 's';
+                    }
+
+                    // Drifting stars based on CONFIG
+                    if (Math.random() < CONFIG.effects.driftChance) {
+                        const driftAnimations = ['driftLeft', 'driftRight', 'driftWave', 'driftDiagonal'];
+                        const randomDrift = driftAnimations[Math.floor(Math.random() * driftAnimations.length)];
+                        const driftDuration = CONFIG.drift.durationMin + Math.random() * (CONFIG.drift.durationMax - CONFIG.drift.durationMin);
+                        const driftDelay = Math.random() * CONFIG.drift.delayMax;
+
+                        // Combine with existing animation or set new one
+                        if (star.style.animation) {
+                            star.style.animation += `, ${randomDrift} ${driftDuration}s ease-in-out ${driftDelay}s infinite`;
+                        } else {
+                            star.style.animation = `${randomDrift} ${driftDuration}s ease-in-out ${driftDelay}s infinite`;
+                        }
                     }
 
                     layer.appendChild(star);
                 }
             }
 
-            // Add twinkle animation
+            // Add twinkle and drift animations
             const style = document.createElement('style');
             style.textContent = `
                 @keyframes twinkle {
                     0%, 100% { opacity: inherit; }
                     50% { opacity: 0.2; }
                 }
+                @keyframes driftLeft {
+                    0%, 100% { transform: translateX(0); }
+                    50% { transform: translateX(-30px); }
+                }
+                @keyframes driftRight {
+                    0%, 100% { transform: translateX(0); }
+                    50% { transform: translateX(30px); }
+                }
+                @keyframes driftWave {
+                    0% { transform: translateX(-20px); }
+                    25% { transform: translateX(10px); }
+                    50% { transform: translateX(25px); }
+                    75% { transform: translateX(-5px); }
+                    100% { transform: translateX(-20px); }
+                }
+                @keyframes driftDiagonal {
+                    0%, 100% { transform: translate(0, 0); }
+                    25% { transform: translate(15px, -10px); }
+                    50% { transform: translate(30px, 5px); }
+                    75% { transform: translate(10px, 10px); }
+                }
             `;
             document.head.appendChild(style);
 
-            // Generate all stars
-            generateStars(layer1, starCounts.layer1);
-            generateStars(layer2, starCounts.layer2);
-            generateStars(layer3, starCounts.layer3);
+            // Generate all stars using CONFIG
+            generateStars(layer1, CONFIG.starCount.layer1);
+            generateStars(layer2, CONFIG.starCount.layer2);
+            generateStars(layer3, CONFIG.starCount.layer3);
 
             // Handle scroll
             let ticking = false;
@@ -188,9 +252,9 @@
                 const scrollPercent = scrollY / maxScroll;
 
                 // Move layers up as user scrolls down (negative Y)
-                layer1.style.transform = `translateY(${-scrollY * speeds.layer1}px)`;
-                layer2.style.transform = `translateY(${-scrollY * speeds.layer2}px)`;
-                layer3.style.transform = `translateY(${-scrollY * speeds.layer3}px)`;
+                layer1.style.transform = `translateY(${-scrollY * CONFIG.parallax.layer1}px)`;
+                layer2.style.transform = `translateY(${-scrollY * CONFIG.parallax.layer2}px)`;
+                layer3.style.transform = `translateY(${-scrollY * CONFIG.parallax.layer3}px)`;
 
                 // Update progress bar
                 progressBar.style.width = (scrollPercent * 100) + '%';
