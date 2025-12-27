@@ -7,6 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="resources/logo.svg">
     <link rel="icon" type="image/png" href="resources/logo.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stars.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -71,6 +72,7 @@
     </main>
 
 
+    <script src="stars.js"></script>
     <script>
         (function() {
             const overlay = document.getElementById('intro-overlay');
@@ -98,8 +100,13 @@
             // Check if user has seen intro before
             if (sessionStorage.getItem('introSeen')) {
                 overlay.style.display = 'none';
+                // Init stars with scroll enabled
+                StarBackground.init({ scrollable: true, minScreens: 3 });
                 return;
             }
+
+            // Init stars without scroll during intro
+            StarBackground.init({ scrollable: false });
 
             // Play video when loaded
             video.addEventListener('loadeddata', function() {
@@ -146,6 +153,11 @@
                 if (wordInterval) clearInterval(wordInterval);
                 overlay.classList.add('fade-out');
                 sessionStorage.setItem('introSeen', 'true');
+
+                // Enable scrolling after intro ends
+                StarBackground.enableScroll();
+                StarBackground.ensureScrollableHeight(3);
+
                 setTimeout(function() {
                     overlay.style.display = 'none';
                 }, 600);

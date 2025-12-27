@@ -156,7 +156,7 @@ body {
     position: relative;
 }
 
-/* Background gradient effect */
+/* Background gradient effect - sits above stars */
 .background-gradient {
     position: fixed;
     top: 0;
@@ -165,10 +165,9 @@ body {
     bottom: 0;
     background:
         radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 140, 160, 0.15), transparent),
-        radial-gradient(ellipse 60% 40% at 80% 0%, rgba(100, 120, 140, 0.1), transparent),
-        linear-gradient(to bottom, #0d0d12 0%, #0a0a0f 100%);
+        radial-gradient(ellipse 60% 40% at 80% 0%, rgba(100, 120, 140, 0.1), transparent);
     pointer-events: none;
-    z-index: -1;
+    z-index: 2;
 }
 
 /* Navigation */
@@ -179,6 +178,8 @@ body {
     padding: 24px 48px;
     max-width: 1400px;
     margin: 0 auto;
+    position: relative;
+    z-index: 10;
 }
 
 .logo img {
@@ -275,6 +276,8 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 60px;
+    position: relative;
+    z-index: 10;
 }
 
 .hero-content {
@@ -371,6 +374,8 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 80px 48px;
+    position: relative;
+    z-index: 10;
 }
 
 .about-header {
@@ -491,6 +496,8 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 60px 48px 80px;
+    position: relative;
+    z-index: 10;
 }
 
 .services-header {
