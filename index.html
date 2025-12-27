@@ -100,13 +100,13 @@
             // Check if user has seen intro before
             if (sessionStorage.getItem('introSeen')) {
                 overlay.style.display = 'none';
-                // Init stars with scroll enabled
-                StarBackground.init({ scrollable: true, minScreens: 3 });
+                // Init stars with virtual scroll
+                StarBackground.init({ virtualScroll: true });
                 return;
             }
 
             // Init stars without scroll during intro
-            StarBackground.init({ scrollable: false });
+            StarBackground.init({ scrollable: false, virtualScroll: true });
 
             // Play video when loaded
             video.addEventListener('loadeddata', function() {
@@ -156,7 +156,6 @@
 
                 // Enable scrolling after intro ends
                 StarBackground.enableScroll();
-                StarBackground.ensureScrollableHeight(3);
 
                 setTimeout(function() {
                     overlay.style.display = 'none';
