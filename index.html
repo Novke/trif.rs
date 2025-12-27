@@ -108,10 +108,24 @@
             // Init stars without scroll during intro
             StarBackground.init({ scrollable: false, virtualScroll: true });
 
-            // Play video when loaded
-            video.addEventListener('loadeddata', function() {
-                video.play();
-            });
+            // Try to play video - multiple attempts for browser compatibility
+            function tryPlayVideo() {
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(function(error) {
+                        // Autoplay blocked - try again on user interaction
+                        console.log('Autoplay blocked, waiting for interaction');
+                    });
+                }
+            }
+
+            // Try playing when video is ready
+            video.addEventListener('canplaythrough', tryPlayVideo);
+
+            // Also try if already loaded (cached)
+            if (video.readyState >= 3) {
+                tryPlayVideo();
+            }
 
             // Show top text earlier (at 50% of video)
             video.addEventListener('timeupdate', function() {
