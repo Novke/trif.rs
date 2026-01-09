@@ -996,27 +996,39 @@ body {
     width: 48px;
     height: 48px;
     border-radius: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.help-card-icon svg {
+    width: 28px;
+    height: 28px;
 }
 
 .help-card-icon.design {
     background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(236, 72, 153, 0.1));
     box-shadow: 0 0 20px rgba(236, 72, 153, 0.2);
+    color: #f472b6;
 }
 
 .help-card-icon.software {
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(99, 102, 241, 0.1));
     box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+    color: #818cf8;
 }
 
 .help-card-icon.copy {
     background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.1));
     box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+    color: #4ade80;
 }
 
 .help-card-icon.systems {
     background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(251, 191, 36, 0.1));
     box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
 }
 
 .help-card h3 {
