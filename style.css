@@ -992,14 +992,25 @@ body {
     transform: translateY(-4px);
 }
 
+.help-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.help-card-header h3 {
+    margin-bottom: 0;
+}
+
 .help-card-icon {
     width: 48px;
     height: 48px;
     border-radius: 12px;
-    margin-bottom: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .help-card-icon svg {
@@ -1019,7 +1030,6 @@ body {
 .help-card h3 {
     font-size: 22px;
     font-weight: 600;
-    margin-bottom: 16px;
 }
 
 .help-problem {
