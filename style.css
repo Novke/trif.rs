@@ -858,6 +858,303 @@ body {
     }
 }
 
+/* ==================== */
+/* HOME PAGE STYLES     */
+/* ==================== */
+
+.home-page {
+    position: relative;
+    z-index: 10;
+}
+
+/* Hero Section */
+.hero-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 48px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    min-height: 70vh;
+}
+
+.hero-section .hero-content {
+    flex: 1;
+    max-width: 650px;
+}
+
+.eyebrow {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.hero-section .hero-title {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+}
+
+.hero-deck {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 540px;
+}
+
+.hero-section .hero-logo {
+    flex: 0 0 auto;
+}
+
+.hero-section .hero-logo img {
+    width: 320px;
+    height: auto;
+    filter: drop-shadow(0 0 60px rgba(17, 206, 206, 0.3));
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Service Pills */
+.service-pills {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 48px 80px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    padding: 14px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.pill:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.pill-icon {
+    font-size: 10px;
+}
+
+.pill-icon.design { color: #f472b6; }
+.pill-icon.software { color: #818cf8; }
+.pill-icon.copy { color: #4ade80; }
+.pill-icon.systems { color: #fbbf24; }
+
+/* How We Can Help Section */
+.help-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 48px;
+}
+
+.section-heading {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.help-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.help-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 36px;
+    transition: all 0.4s ease;
+}
+
+.help-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px);
+}
+
+.help-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.help-card-icon.design {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(236, 72, 153, 0.1));
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.2);
+}
+
+.help-card-icon.software {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(99, 102, 241, 0.1));
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+}
+
+.help-card-icon.copy {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.1));
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
+}
+
+.help-card-icon.systems {
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(251, 191, 36, 0.1));
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+}
+
+.help-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.help-problem {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+.help-solution {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.help-card .btn {
+    padding: 10px 20px;
+    font-size: 13px;
+}
+
+/* How We Work Together - Diamond Layout */
+.work-together-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 48px 120px;
+}
+
+.diamond-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.diamond-top {
+    text-align: center;
+    max-width: 700px;
+}
+
+.section-subheading {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 16px;
+}
+
+.section-intro {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.7;
+}
+
+.diamond-middle {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    width: 100%;
+}
+
+.engagement-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 36px;
+    transition: all 0.4s ease;
+}
+
+.engagement-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(17, 206, 206, 0.3);
+}
+
+.engagement-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #11cece;
+}
+
+.engagement-subtitle {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.engagement-card p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.engagement-note {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.4) !important;
+    margin-top: 16px;
+}
+
+.diamond-bottom {
+    width: 100%;
+    max-width: 600px;
+}
+
+.practice-card {
+    background: rgba(17, 206, 206, 0.05);
+    border: 1px solid rgba(17, 206, 206, 0.2);
+    border-radius: 20px;
+    padding: 36px;
+    text-align: center;
+}
+
+.practice-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.practice-card p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.practice-conclusion {
+    margin-top: 16px;
+    color: #11cece !important;
+    font-weight: 500;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .hero {
@@ -875,6 +1172,30 @@ body {
 
     .hero-buttons {
         justify-content: center;
+    }
+
+    /* Home page responsive */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 48px;
+        min-height: auto;
+    }
+
+    .hero-section .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-deck {
+        max-width: 100%;
+    }
+
+    .help-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .diamond-middle {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -986,5 +1307,41 @@ body {
 
     .project-example {
         text-align: center;
+    }
+
+    /* Home page mobile */
+    .hero-section {
+        padding: 40px 24px;
+    }
+
+    .hero-section .hero-logo img {
+        width: 200px;
+    }
+
+    .service-pills {
+        padding: 0 24px 60px;
+        gap: 12px;
+    }
+
+    .pill {
+        padding: 12px 18px;
+        font-size: 13px;
+    }
+
+    .help-section {
+        padding: 60px 24px;
+    }
+
+    .help-card {
+        padding: 28px;
+    }
+
+    .work-together-section {
+        padding: 60px 24px 80px;
+    }
+
+    .engagement-card,
+    .practice-card {
+        padding: 28px;
     }
 }
