@@ -1054,113 +1054,91 @@ body {
 
 /* How We Work Together - Diamond Layout */
 .work-together-section {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 100px 48px 120px;
-}
-
-.diamond-layout {
+    padding: 120px 48px 180px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 40px;
 }
 
-.diamond-top {
-    text-align: center;
+.diamond-container {
+    position: relative;
+    width: 60vw;
+    height: 60vw;
     max-width: 700px;
+    max-height: 700px;
 }
 
-.section-subheading {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 16px;
-}
-
-.section-intro {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.5);
-    line-height: 1.7;
-}
-
-.diamond-middle {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+.diamond-shape {
+    position: relative;
     width: 100%;
+    height: 100%;
+    transform: rotate(45deg);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.engagement-card {
+.diamond-cell {
+    position: relative;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    padding: 36px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.diamond-cell:hover {
+    background: rgba(17, 206, 206, 0.1);
+    border-color: rgba(17, 206, 206, 0.5);
+    z-index: 10;
+    box-shadow: 0 0 40px rgba(17, 206, 206, 0.3);
+}
+
+.diamond-cell-inner {
+    transform: rotate(-45deg);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.diamond-cell h3 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #11cece;
+    margin-bottom: 0;
+    transition: all 0.3s ease;
+}
+
+.diamond-text {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+    margin-top: 12px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
     transition: all 0.4s ease;
 }
 
-.engagement-card:hover {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(17, 206, 206, 0.3);
+.diamond-cell:hover .diamond-text {
+    opacity: 1;
+    max-height: 200px;
 }
 
-.engagement-card h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 12px;
-    color: #11cece;
-}
-
-.engagement-subtitle {
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 500;
-    margin-bottom: 16px;
-}
-
-.engagement-card p {
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.5);
-    line-height: 1.7;
-    margin-bottom: 12px;
-}
-
-.engagement-note {
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.4) !important;
-    margin-top: 16px;
-}
-
-.diamond-bottom {
-    width: 100%;
-    max-width: 600px;
-}
-
-.practice-card {
-    background: rgba(17, 206, 206, 0.05);
-    border: 1px solid rgba(17, 206, 206, 0.2);
-    border-radius: 20px;
-    padding: 36px;
-    text-align: center;
-}
-
-.practice-card h3 {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.practice-card p {
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.8;
+.diamond-cell:hover h3 {
     margin-bottom: 8px;
 }
 
-.practice-conclusion {
-    margin-top: 16px;
-    color: #11cece !important;
-    font-weight: 500;
-}
 
 /* Responsive */
 @media (max-width: 1024px) {
@@ -1201,8 +1179,24 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .diamond-middle {
-        grid-template-columns: 1fr;
+    /* Diamond responsive */
+    .diamond-container {
+        width: 70vw;
+        height: 70vw;
+        max-width: 500px;
+        max-height: 500px;
+    }
+
+    .diamond-cell h3 {
+        font-size: 14px;
+    }
+
+    .diamond-text {
+        font-size: 11px;
+    }
+
+    .diamond-cell-inner {
+        padding: 30px;
     }
 }
 
@@ -1347,8 +1341,42 @@ body {
         padding: 60px 24px 80px;
     }
 
-    .engagement-card,
-    .practice-card {
-        padding: 28px;
+    /* Diamond mobile - stack vertically */
+    .diamond-shape {
+        transform: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        height: auto;
+        border: none;
+        background: none;
+    }
+
+    .diamond-container {
+        width: 100%;
+        height: auto;
+        max-width: none;
+        max-height: none;
+    }
+
+    .diamond-cell {
+        border-radius: 12px;
+    }
+
+    .diamond-cell-inner {
+        transform: none;
+        padding: 24px;
+    }
+
+    .diamond-cell h3 {
+        font-size: 16px;
+    }
+
+    .diamond-text {
+        font-size: 13px;
+        opacity: 1;
+        max-height: none;
+        margin-top: 8px;
     }
 }
