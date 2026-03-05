@@ -178,18 +178,43 @@ body {
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 20px;
     padding: 24px 48px;
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: transparent;
+    pointer-events: none;
+}
+
+.navbar .logo,
+.navbar .navbar-cta-slot {
+    pointer-events: auto;
 }
 
 .logo img {
     height: 40px;
     width: auto;
     filter: brightness(1.1);
+}
+
+.navbar-cta-slot {
+    display: flex;
+    align-items: center;
+}
+
+/* Hero CTA - the button that animates to navbar */
+.cta-wrapper {
+    display: inline-block;
+    min-height: 44px; /* Preserve space when button is fixed */
+}
+
+#hero-cta.is-fixed {
+    position: fixed !important;
+    z-index: 1001;
 }
 
 .nav-menu {
@@ -1016,6 +1041,12 @@ body {
 .help-card-icon svg {
     width: 28px;
     height: 28px;
+}
+
+.help-card-icon img {
+    width: 28px;
+    height: 28px;
+    filter: invert(73%) sepia(67%) saturate(459%) hue-rotate(127deg) brightness(94%) contrast(92%);
 }
 
 .help-card-icon.design,
