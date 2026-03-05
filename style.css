@@ -1093,87 +1093,107 @@ body {
 .work-together-section {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 120px 48px 180px;
+    padding: 80px 48px 100px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.diamond-container {
+.wt-container {
     position: relative;
-    width: 60vw;
-    height: 60vw;
-    max-width: 700px;
-    max-height: 700px;
-}
-
-.diamond-shape {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform: rotate(45deg);
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 280px 80px;
+    width: 100%;
+    max-width: 80vw;
 }
 
-.diamond-cell {
-    position: relative;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-}
-
-.diamond-cell:hover {
-    background: rgba(17, 206, 206, 0.1);
-    border-color: rgba(17, 206, 206, 0.5);
-    z-index: 10;
-    box-shadow: 0 0 40px rgba(17, 206, 206, 0.3);
-}
-
-.diamond-cell-inner {
-    transform: rotate(-45deg);
+.wt-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    pointer-events: none;
+    overflow: visible;
+}
+
+#wt-top    { grid-column: 2; grid-row: 1; }
+#wt-left   { grid-column: 1; grid-row: 2; }
+#wt-right  { grid-column: 3; grid-row: 2; }
+#wt-bottom { grid-column: 2; grid-row: 3; }
+
+.wt-node {
+    /* No card — just content */
+    background: none;
+    border: none;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    min-height: 320px;
+    cursor: default;
+}
+
+/* Overlay front and back in the same grid cell */
+.wt-node-front,
+.wt-node-back {
+    grid-area: 1 / 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 40px;
-    box-sizing: border-box;
+    gap: 48px;
+    transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-.diamond-cell h3 {
+.wt-node-front {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.wt-node:hover .wt-node-front {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+.wt-node-back {
+    opacity: 0;
+    transform: translateY(10px);
+    padding: 0 8px;
+}
+
+.wt-node:hover .wt-node-back {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.wt-node-back p {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.65;
+    margin: 0;
+}
+
+.wt-icon {
+    color: #11cece;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 192px;
+    height: 192px;
+    background: rgba(17, 206, 206, 0.1);
+    border-radius: 36px;
+    flex-shrink: 0;
+}
+
+.wt-node h3 {
     font-size: 36px;
     font-weight: 600;
-    color: #11cece;
-    margin-bottom: 0;
-    transition: all 0.3s ease;
-}
-
-.diamond-text {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.5;
-    margin-top: 12px;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease;
-}
-
-.diamond-cell:hover .diamond-text {
-    opacity: 1;
-    max-height: 200px;
-}
-
-.diamond-cell:hover h3 {
-    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    line-height: 1.25;
 }
 
 
@@ -1216,24 +1236,14 @@ body {
         grid-template-columns: 1fr;
     }
 
-    /* Diamond responsive */
-    .diamond-container {
-        width: 70vw;
-        height: 70vw;
-        max-width: 500px;
-        max-height: 500px;
+    /* Work together responsive */
+    .wt-container {
+        gap: 200px 60px;
+        max-width: 88vw;
     }
 
-    .diamond-cell h3 {
-        font-size: 14px;
-    }
-
-    .diamond-text {
-        font-size: 11px;
-    }
-
-    .diamond-cell-inner {
-        padding: 30px;
+    .wt-node h3 {
+        font-size: 18px;
     }
 }
 
@@ -1378,42 +1388,32 @@ body {
         padding: 60px 24px 80px;
     }
 
-    /* Diamond mobile - stack vertically */
-    .diamond-shape {
-        transform: none;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        width: 100%;
-        height: auto;
-        border: none;
-        background: none;
+    /* Work together mobile - stack vertically */
+    .wt-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 40px;
+        max-width: 420px;
     }
 
-    .diamond-container {
-        width: 100%;
-        height: auto;
-        max-width: none;
-        max-height: none;
+    #wt-top, #wt-left, #wt-right, #wt-bottom {
+        grid-column: 1;
+        grid-row: auto;
     }
 
-    .diamond-cell {
-        border-radius: 12px;
+    .wt-svg {
+        display: none;
     }
 
-    .diamond-cell-inner {
-        transform: none;
-        padding: 24px;
+    .wt-node {
+        min-height: auto;
     }
 
-    .diamond-cell h3 {
-        font-size: 16px;
+    .wt-node h3 {
+        font-size: 18px;
     }
 
-    .diamond-text {
-        font-size: 13px;
-        opacity: 1;
-        max-height: none;
-        margin-top: 8px;
+    .wt-node-back p {
+        font-size: 14px;
     }
 }

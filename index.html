@@ -137,37 +137,74 @@
             </div>
         </section>
 
-        <!-- How We Work Together Section - Diamond Layout -->
+        <!-- How We Work Together Section -->
         <section class="work-together-section">
-            <div class="diamond-container">
-                <div class="diamond-shape">
-                    <!-- Top-Left (appears as Top when rotated) -->
-                    <div class="diamond-cell">
-                        <div class="diamond-cell-inner">
-                            <h3>How we work together</h3>
-                            <p class="diamond-text">Not every business needs the same level of involvement. Rather than selling predefined services, we focus on understanding the problem and taking responsibility for solving it properly.</p>
+            <div class="wt-container" id="wt-container">
+                <svg class="wt-svg" id="wt-svg" aria-hidden="true"></svg>
+
+                <div class="wt-node" id="wt-top">
+                    <div class="wt-node-front">
+                        <div class="wt-icon">
+                            <svg width="90" height="90" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="4" r="2" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="4" cy="20" r="2" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="20" cy="20" r="2" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M12 6v3.5M10.5 9.5L5 18M13.5 9.5L19 18M6 18h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
                         </div>
+                        <h3>How we work together</h3>
                     </div>
-                    <!-- Top-Right (appears as Right when rotated) -->
-                    <div class="diamond-cell">
-                        <div class="diamond-cell-inner">
-                            <h3>Single Engagement</h3>
-                            <p class="diamond-text">For businesses that know exactly what they need and want it handled properly. This might be a website, a system, a piece of copy, or a specific improvement. The scope is smaller, but the level of care and attention remains the same.</p>
-                        </div>
+                    <div class="wt-node-back">
+                        <p>Not every business needs the same level of involvement. Rather than selling predefined services, we focus on understanding the problem and taking responsibility for solving it properly.</p>
                     </div>
-                    <!-- Bottom-Left (appears as Left when rotated) -->
-                    <div class="diamond-cell">
-                        <div class="diamond-cell-inner">
-                            <h3>End-to-end projects</h3>
-                            <p class="diamond-text">For businesses that want one team to take responsibility for the full outcome. These projects typically involve multiple areas of work across design, development, and systems. We assemble the right team for each project.</p>
+                </div>
+
+                <div class="wt-node" id="wt-left">
+                    <div class="wt-node-front">
+                        <div class="wt-icon">
+                            <svg width="90" height="90" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="9" width="5" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                                <rect x="9.5" y="9" width="5" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                                <rect x="17" y="9" width="5" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                                <line x1="7" y1="12" x2="9.5" y2="12" stroke="currentColor" stroke-width="1.5"/>
+                                <line x1="14.5" y1="12" x2="17" y2="12" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
                         </div>
+                        <h3>End-to-end projects</h3>
                     </div>
-                    <!-- Bottom-Right (appears as Bottom when rotated) -->
-                    <div class="diamond-cell">
-                        <div class="diamond-cell-inner">
-                            <h3>What this means in practice</h3>
-                            <p class="diamond-text">We value clear communication, mutual trust, and realistic expectations. If it's a good fit, we work closely and take responsibility. If it's not, we'll be honest about it early.</p>
+                    <div class="wt-node-back">
+                        <p>For businesses that want one team to take responsibility for the full outcome. These projects typically involve multiple areas of work across design, development, and systems. We assemble the right team for each project.</p>
+                    </div>
+                </div>
+
+                <div class="wt-node" id="wt-right">
+                    <div class="wt-node-front">
+                        <div class="wt-icon">
+                            <svg width="90" height="90" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                            </svg>
                         </div>
+                        <h3>Single Engagement</h3>
+                    </div>
+                    <div class="wt-node-back">
+                        <p>For businesses that know exactly what they need and want it handled properly. This might be a website, a system, a piece of copy, or a specific improvement. The scope is smaller, but the level of care and attention remains the same.</p>
+                    </div>
+                </div>
+
+                <div class="wt-node" id="wt-bottom">
+                    <div class="wt-node-front">
+                        <div class="wt-icon">
+                            <svg width="90" height="90" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M16.24 7.76L13.41 13.41L7.76 16.24L10.59 10.59L16.24 7.76Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>What this means in practice</h3>
+                    </div>
+                    <div class="wt-node-back">
+                        <p>We value clear communication, mutual trust, and realistic expectations. If it's a good fit, we work closely and take responsibility. If it's not, we'll be honest about it early.</p>
                     </div>
                 </div>
             </div>
@@ -175,6 +212,73 @@
     </main>
 
 
+    <script>
+        // Draw SVG connecting lines between work-together nodes
+        function drawWtLines() {
+            const container = document.getElementById('wt-container');
+            const svg = document.getElementById('wt-svg');
+            if (!container || !svg) return;
+
+            // Hide on mobile (CSS hides the SVG, but skip computation too)
+            if (window.getComputedStyle(svg).display === 'none') return;
+
+            const cr = container.getBoundingClientRect();
+
+            function pt(el, edge) {
+                const r = el.getBoundingClientRect();
+                const cx = r.left - cr.left + r.width / 2;
+                const cy = r.top - cr.top + r.height / 2;
+                if (edge === 'bottom') return { x: cx, y: r.top - cr.top + r.height };
+                if (edge === 'top')    return { x: cx, y: r.top - cr.top };
+                if (edge === 'left')   return { x: r.left - cr.left, y: cy };
+                if (edge === 'right')  return { x: r.left - cr.left + r.width, y: cy };
+                return { x: cx, y: cy };
+            }
+
+            const top    = document.getElementById('wt-top');
+            const left   = document.getElementById('wt-left');
+            const right  = document.getElementById('wt-right');
+            const bottom = document.getElementById('wt-bottom');
+
+            const pTop     = pt(top,    'center');
+            const pLeft    = pt(left,   'center');
+            const pRight   = pt(right,  'center');
+            const pLright  = pt(left,   'right');
+            const pRleft   = pt(right,  'left');
+            const pBot     = pt(bottom, 'top');
+
+            const midX = (pLeft.x + pRight.x) / 2;
+            const midY = pLeft.y;
+
+            const W = cr.width;
+            const H = cr.height;
+            svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+            svg.setAttribute('width', W);
+            svg.setAttribute('height', H);
+
+            const c = '#11cece';
+            const op = '0.45';
+            const dot = 3;
+
+            function line(x1, y1, x2, y2) {
+                return `
+                    <line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"
+                          stroke="${c}" stroke-width="1.5" stroke-opacity="${op}" stroke-dasharray="5 8" stroke-linecap="round"/>
+                    <circle cx="${x1}" cy="${y1}" r="${dot}" fill="${c}" fill-opacity="${op}"/>
+                    <circle cx="${x2}" cy="${y2}" r="${dot}" fill="${c}" fill-opacity="${op}"/>
+                `;
+            }
+
+            svg.innerHTML =
+                line(pTop.x, pTop.y, pLeft.x,  pLeft.y)  +
+                line(pTop.x, pTop.y, pRight.x, pRight.y) +
+                line(pLright.x, pLright.y, pRleft.x, pRleft.y) +
+                line(midX, midY, pBot.x, pBot.y);
+        }
+
+        window.addEventListener('load', drawWtLines);
+        window.addEventListener('resize', drawWtLines);
+    </script>
     <script src="stars.js"></script>
     <script>
         (function() {
