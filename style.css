@@ -206,15 +206,21 @@ body {
     align-items: center;
 }
 
-/* Hero CTA - the button that animates to navbar */
+/* Hero CTA */
 .cta-wrapper {
     display: inline-block;
-    min-height: 44px; /* Preserve space when button is fixed */
 }
 
-#hero-cta.is-fixed {
-    position: fixed !important;
-    z-index: 1001;
+/* Navbar CTA - hidden by default, appears when hero CTA scrolls out of view */
+#navbar-cta {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.75s ease;
+}
+
+#navbar-cta.visible {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .nav-menu {

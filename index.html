@@ -33,7 +33,9 @@
         <div class="logo">
             <a href="index.html"><img src="resources/logo.svg" alt="3F Solutions Logo"></a>
         </div>
-        <div class="navbar-cta-slot"></div>
+        <div class="navbar-cta-slot">
+            <a href="#book-call" class="btn btn-primary" id="navbar-cta">Book a call</a>
+        </div>
     </nav>
 
     <main class="home-page">
@@ -286,126 +288,24 @@
         })();
     </script>
     <script>
-        // Book a call button dock animation - ultra smooth
+        // Show "Book a call" in navbar when hero CTA scrolls out of view
         (function() {
-            const heroCta = document.getElementById('hero-cta');
             const ctaWrapper = document.getElementById('cta-wrapper');
-            const navbar = document.querySelector('.navbar');
+            const navbarCta = document.getElementById('navbar-cta');
 
-            if (!heroCta || !ctaWrapper) return;
+            if (!ctaWrapper || !navbarCta) return;
 
-            // State
-            let isDocked = false;
-            let originalPagePosition = null;
-            let isInitialized = false;
-
-            // Current animated position (viewport coordinates)
-            let currentTop = 0;
-            let currentLeft = 0;
-
-            // Target position (updated every frame)
-            let targetTop = 0;
-            let targetLeft = 0;
-
-            // Lerp factor - lower = smoother but slower
-            const LERP_SPEED = 0.1;
-            const SNAP_THRESHOLD = 1;
-
-            function getNavbarTargetPosition() {
-                const logoEl = navbar.querySelector('.logo');
-                const logoRect = logoEl.getBoundingClientRect();
-                return {
-                    top: logoRect.top + (logoRect.height / 2) - (heroCta.offsetHeight / 2),
-                    left: logoRect.right + 20
-                };
-            }
-
-            function getOriginalScreenPosition() {
-                return {
-                    top: originalPagePosition.top - window.scrollY,
-                    left: originalPagePosition.left
-                };
-            }
-
-            function lerp(start, end, factor) {
-                return start + (end - start) * factor;
-            }
-
-            function storeOriginalPosition() {
-                const rect = ctaWrapper.getBoundingClientRect();
-                originalPagePosition = {
-                    top: rect.top + window.scrollY,
-                    left: rect.left
-                };
-                ctaWrapper.style.minHeight = heroCta.offsetHeight + 'px';
-                isInitialized = true;
-            }
-
-            function animationLoop() {
-                if (!isInitialized) {
-                    requestAnimationFrame(animationLoop);
-                    return;
-                }
-
-                const viewportHeight = window.innerHeight;
-                const triggerZone = viewportHeight * 0.1;
-
-                if (!isDocked) {
-                    const wrapperRect = ctaWrapper.getBoundingClientRect();
-
-                    if (wrapperRect.top <= triggerZone) {
-                        isDocked = true;
-                        currentTop = wrapperRect.top;
-                        currentLeft = wrapperRect.left;
-                        heroCta.classList.add('is-fixed');
-                        heroCta.style.top = currentTop + 'px';
-                        heroCta.style.left = currentLeft + 'px';
-                    }
-                }
-
-                if (isDocked) {
-                    const originalScreen = getOriginalScreenPosition();
-                    const navTarget = getNavbarTargetPosition();
-
-                    if (originalScreen.top > triggerZone) {
-                        targetTop = originalScreen.top;
-                        targetLeft = originalScreen.left;
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        navbarCta.classList.remove('visible');
                     } else {
-                        targetTop = navTarget.top;
-                        targetLeft = navTarget.left;
+                        navbarCta.classList.add('visible');
                     }
+                });
+            }, { threshold: 0 });
 
-                    currentTop = lerp(currentTop, targetTop, LERP_SPEED);
-                    currentLeft = lerp(currentLeft, targetLeft, LERP_SPEED);
-
-                    heroCta.style.top = currentTop + 'px';
-                    heroCta.style.left = currentLeft + 'px';
-
-                    const distToOriginal = Math.abs(originalScreen.top - currentTop) + Math.abs(originalScreen.left - currentLeft);
-                    if (originalScreen.top > triggerZone && distToOriginal < SNAP_THRESHOLD) {
-                        isDocked = false;
-                        heroCta.classList.remove('is-fixed');
-                        heroCta.style.top = '';
-                        heroCta.style.left = '';
-                    }
-                }
-
-                requestAnimationFrame(animationLoop);
-            }
-
-            // Wait for page to fully load before initializing
-            window.addEventListener('load', function() {
-                setTimeout(storeOriginalPosition, 500);
-            });
-
-            // Start animation loop immediately but it will wait for initialization
-            requestAnimationFrame(animationLoop);
-
-            window.addEventListener('resize', function() {
-                if (!isDocked && isInitialized) {
-                    storeOriginalPosition();
-                }
-            });
+            observer.observe(ctaWrapper);
         })();
     </script>
 </body>
