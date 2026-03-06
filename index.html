@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="resources/logo.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="stars.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,7 +35,7 @@
             <a href="index.html"><img src="resources/logo.svg" alt="3F Solutions Logo"></a>
         </div>
         <div class="navbar-cta-slot">
-            <a href="#book-call" class="btn btn-primary" id="navbar-cta">Book a call</a>
+            <a href="#" onclick="openBooking(event)" class="btn btn-primary" id="navbar-cta">Book a call</a>
         </div>
     </nav>
 
@@ -50,7 +51,7 @@
                     Our team of specialists helps solve real problems: from user experience issues to fixing what's slowing business growth and revenue.
                 </p>
                 <div class="cta-wrapper" id="cta-wrapper">
-                    <a href="#book-call" class="btn btn-primary" id="hero-cta">Book a call</a>
+                    <a href="#" onclick="openBooking(event)" class="btn btn-primary" id="hero-cta">Book a call</a>
                 </div>
             </div>
             <div class="hero-logo">
@@ -283,7 +284,7 @@
             <div class="cp-cta">
                 <p class="cp-cta-text">Ready to convert?</p>
                 <p class="cp-cta-sub">Let's talk about your funnel and where we can help.</p>
-                <a href="#book-call" class="btn btn-primary">Book a call</a>
+                <a href="#" onclick="openBooking(event)" class="btn btn-primary">Book a call</a>
             </div>
 
         </div>
@@ -545,6 +546,16 @@
 
             observer.observe(ctaWrapper);
         })();
+    </script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script>
+        function openBooking(e) {
+            if (e) e.preventDefault();
+            Calendly.initPopupWidget({
+                url: 'https://calendly.com/3f-consult/30min',
+                primaryColor: '11cece'
+            });
+        }
     </script>
 </body>
 </html>

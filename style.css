@@ -1612,3 +1612,11 @@ body {
         font-size: 15px;
     }
 }
+
+/* ================================ */
+/* CALENDLY POPUP OVERLAY           */
+/* ================================ */
+
+.calendly-overlay {
+    background: rgba(10, 10, 15, 0.85) !important;
+}

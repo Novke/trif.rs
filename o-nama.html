@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="resources/logo.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="stars.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,7 +27,7 @@
             <a href="usluge.html" class="nav-link">Usluge</a>
         </div>
 
-        <a href="#rezervisi" class="btn btn-primary">Rezerviši Termin</a>
+        <a href="#" onclick="openBooking(event)" class="btn btn-primary">Rezerviši Termin</a>
     </nav>
 
     <main class="about-page">
@@ -119,6 +120,16 @@
     <script src="stars.js"></script>
     <script>
         StarBackground.init({ virtualScroll: true });
+    </script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script>
+        function openBooking(e) {
+            if (e) e.preventDefault();
+            Calendly.initPopupWidget({
+                url: 'https://calendly.com/novicatrifkovic/3f-consultation',
+                primaryColor: '11cece'
+            });
+        }
     </script>
 </body>
 </html>
