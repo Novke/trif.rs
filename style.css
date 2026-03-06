@@ -261,6 +261,7 @@ body {
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
+    font-family: inherit;
     padding: 12px 24px;
     border-radius: 50px;
     transition: all 0.3s ease;
@@ -896,6 +897,12 @@ body {
 .home-page {
     position: relative;
     z-index: 10;
+    transition: opacity 0.45s ease;
+}
+
+.home-page.page-exit {
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* Hero Section */
@@ -1415,5 +1422,193 @@ body {
 
     .wt-node-back p {
         font-size: 14px;
+    }
+}
+
+/* ================================ */
+/* COPYWRITING DETAIL PAGE          */
+/* ================================ */
+
+.copywriting-page {
+    display: none;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.5s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    z-index: 10;
+}
+
+.copywriting-page.page-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cp-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 120px 48px 100px;
+}
+
+/* Back button */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    padding: 8px 0;
+    margin-bottom: 64px;
+    letter-spacing: 0.02em;
+    transition: color 0.25s ease;
+}
+
+.back-btn:hover {
+    color: #11cece;
+}
+
+.back-btn svg {
+    transition: transform 0.25s ease;
+}
+
+.back-btn:hover svg {
+    transform: translateX(-4px);
+}
+
+/* Page header */
+.cp-header {
+    margin-bottom: 80px;
+}
+
+.cp-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #11cece;
+    margin-bottom: 24px;
+    opacity: 0.75;
+}
+
+.cp-title {
+    font-size: clamp(44px, 6vw, 72px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 28px;
+}
+
+.cp-subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.45);
+    max-width: 520px;
+    line-height: 1.7;
+}
+
+/* Service items */
+.cp-services {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+}
+
+.cp-service-item {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 0 40px;
+    padding: 48px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    transition: border-color 0.3s ease;
+    cursor: default;
+}
+
+.cp-service-item:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.cp-service-item:hover {
+    border-top-color: rgba(17, 206, 206, 0.2);
+}
+
+.cp-service-num {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(17, 206, 206, 0.3);
+    letter-spacing: 1px;
+    padding-top: 5px;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.cp-service-item:hover .cp-service-num {
+    color: #11cece;
+}
+
+.cp-service-content h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 12px;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+}
+
+.cp-service-item:hover .cp-service-content h3 {
+    color: #ffffff;
+}
+
+.cp-service-content p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.75;
+    max-width: 540px;
+}
+
+/* CTA section */
+.cp-cta {
+    text-align: center;
+    padding: 64px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.cp-cta-text {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+}
+
+.cp-cta-sub {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 36px;
+}
+
+/* Responsive — copywriting page */
+@media (max-width: 768px) {
+    .cp-inner {
+        padding: 100px 24px 80px;
+    }
+
+    .cp-header {
+        margin-bottom: 56px;
+    }
+
+    .cp-service-item {
+        grid-template-columns: 48px 1fr;
+        gap: 0 20px;
+        padding: 36px 0;
+    }
+
+    .cp-service-content h3 {
+        font-size: 20px;
+    }
+
+    .cp-service-content p {
+        font-size: 15px;
     }
 }

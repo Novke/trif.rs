@@ -120,7 +120,7 @@
                     </div>
                     <p class="help-problem">Good traffic is wasted if the message isn't clear.</p>
                     <p class="help-solution">We help businesses clarify what they offer, why it matters, and what people should do next.</p>
-                    <a href="usluge.html" class="btn btn-outline">Explore</a>
+                    <button class="btn btn-outline" onclick="navigateToCopywriting()">Explore</button>
                 </div>
 
                 <div class="help-card">
@@ -211,6 +211,83 @@
         </section>
     </main>
 
+    <!-- Copywriting Detail Page -->
+    <div id="page-copywriting" class="copywriting-page">
+        <div class="cp-inner">
+
+            <button class="back-btn" onclick="navigateBack()">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Back
+            </button>
+
+            <div class="cp-header">
+                <p class="cp-eyebrow">Copywriting</p>
+                <h1 class="cp-title">Funnel, Conversion<br>& Strategy</h1>
+                <p class="cp-subtitle">Good traffic is wasted if the message isn't clear. We help you say the right thing, to the right people, at the right moment.</p>
+            </div>
+
+            <div class="cp-services">
+
+                <div class="cp-service-item">
+                    <span class="cp-service-num">01</span>
+                    <div class="cp-service-content">
+                        <h3>Messaging Strategy</h3>
+                        <p>We clarify your offer and positioning so visitors understand your value in seconds.</p>
+                    </div>
+                </div>
+
+                <div class="cp-service-item">
+                    <span class="cp-service-num">02</span>
+                    <div class="cp-service-content">
+                        <h3>Conversion Copy</h3>
+                        <p>Headlines, sales pages, and funnels written to turn readers into buyers.</p>
+                    </div>
+                </div>
+
+                <div class="cp-service-item">
+                    <span class="cp-service-num">03</span>
+                    <div class="cp-service-content">
+                        <h3>Content & SEO</h3>
+                        <p>We plan and write content that ranks and educates your audience.</p>
+                    </div>
+                </div>
+
+                <div class="cp-service-item">
+                    <span class="cp-service-num">04</span>
+                    <div class="cp-service-content">
+                        <h3>A/B Testing & Analytics</h3>
+                        <p>We measure everything and refine pages to squeeze out extra sales.</p>
+                    </div>
+                </div>
+
+                <div class="cp-service-item">
+                    <span class="cp-service-num">05</span>
+                    <div class="cp-service-content">
+                        <h3>Email & Ads Campaigns</h3>
+                        <p>Persuasive email sequences and ads to nurture leads and drive action.</p>
+                    </div>
+                </div>
+
+                <div class="cp-service-item">
+                    <span class="cp-service-num">06</span>
+                    <div class="cp-service-content">
+                        <h3>Funnel Architecture</h3>
+                        <p>We design customer journeys — landing pages, upsells, follow-ups — that guide buyers step-by-step.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="cp-cta">
+                <p class="cp-cta-text">Ready to convert?</p>
+                <p class="cp-cta-sub">Let's talk about your funnel and where we can help.</p>
+                <a href="#book-call" class="btn btn-primary">Book a call</a>
+            </div>
+
+        </div>
+    </div>
 
     <script>
         // Draw SVG connecting lines between work-together nodes
@@ -387,6 +464,63 @@
             document.addEventListener('keydown', function(e) {
                 if (overlay.style.display !== 'none') {
                     overlay.click();
+                }
+            });
+        })();
+    </script>
+    <script>
+        // Smooth page navigation — home ↔ copywriting (stars zoom, content swaps)
+        (function() {
+            var homePage = document.querySelector('.home-page');
+
+            window.navigateToCopywriting = function() {
+                var copyPage = document.getElementById('page-copywriting');
+                var sc = document.getElementById('star-container');
+
+                // Fade out home page + zoom stars simultaneously
+                homePage.classList.add('page-exit');
+                if (sc) sc.classList.add('zoomed');
+
+                setTimeout(function() {
+                    // Swap pages
+                    homePage.style.display = 'none';
+                    window.scrollTo(0, 0);
+                    copyPage.style.display = 'block';
+                    copyPage.offsetHeight; // force reflow so transition fires
+                    copyPage.classList.add('page-visible');
+
+                    history.pushState({ page: 'copywriting' }, '', '#copywriting');
+                }, 480);
+            };
+
+            window.navigateBack = function() {
+                var copyPage = document.getElementById('page-copywriting');
+                var sc = document.getElementById('star-container');
+
+                // Fade out copywriting page + unzoom stars
+                copyPage.classList.remove('page-visible');
+                if (sc) sc.classList.remove('zoomed');
+
+                setTimeout(function() {
+                    copyPage.style.display = 'none';
+                    window.scrollTo(0, 0);
+                    // Home page still has page-exit (opacity 0) — show it, then fade in
+                    homePage.style.display = 'block';
+                    homePage.offsetHeight; // force reflow
+                    homePage.classList.remove('page-exit');
+
+                    history.pushState({ page: 'home' }, '', window.location.pathname);
+                }, 480);
+            };
+
+            // Browser back/forward button support
+            window.addEventListener('popstate', function() {
+                var copyPage = document.getElementById('page-copywriting');
+                var isOnCopy = copyPage.style.display === 'block';
+                if (window.location.hash === '#copywriting' && !isOnCopy) {
+                    window.navigateToCopywriting();
+                } else if (window.location.hash !== '#copywriting' && isOnCopy) {
+                    window.navigateBack();
                 }
             });
         })();
