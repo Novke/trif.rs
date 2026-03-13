@@ -191,6 +191,7 @@ body {
 }
 
 .navbar .logo,
+.navbar .nav-menu,
 .navbar .navbar-cta-slot {
     pointer-events: auto;
 }
@@ -1111,9 +1112,9 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto auto;
-    gap: 280px 80px;
+    gap: 180px 56px;
     width: 100%;
-    max-width: 80vw;
+    max-width: 68vw;
 }
 
 .wt-svg {
@@ -1139,7 +1140,7 @@ body {
     display: grid;
     place-items: center;
     text-align: center;
-    min-height: 320px;
+    min-height: 220px;
     cursor: default;
 }
 
@@ -1150,7 +1151,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 48px;
+    gap: 32px;
     transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
@@ -1177,7 +1178,7 @@ body {
 }
 
 .wt-node-back p {
-    font-size: 20px;
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.65);
     line-height: 1.65;
     margin: 0;
@@ -1188,15 +1189,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 192px;
-    height: 192px;
+    width: 115px;
+    height: 115px;
     background: rgba(17, 206, 206, 0.1);
-    border-radius: 36px;
+    border-radius: 22px;
     flex-shrink: 0;
 }
 
 .wt-node h3 {
-    font-size: 36px;
+    font-size: 22px;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
     margin: 0;
