@@ -6,6 +6,31 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-y: scroll; /* always reserve scrollbar space — no layout shift */
+}
+
+/* Custom scrollbar — Webkit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(17, 206, 206, 0.2);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(17, 206, 206, 0.4);
+}
+
+/* Custom scrollbar — Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(17, 206, 206, 0.2) transparent;
 }
 
 /* Intro Animation Overlay */
