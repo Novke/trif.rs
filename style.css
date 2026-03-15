@@ -895,15 +895,26 @@ body {
 /* HOME PAGE STYLES     */
 /* ==================== */
 
+/* SPA page transitions */
+.page-content {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.page-content.page-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page-content.page-exit {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .home-page {
     position: relative;
     z-index: 10;
-    transition: opacity 0.45s ease;
-}
-
-.home-page.page-exit {
-    opacity: 0;
-    pointer-events: none;
 }
 
 /* Hero Section */
@@ -1431,17 +1442,8 @@ body {
 /* ================================ */
 
 .copywriting-page {
-    display: none;
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.5s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
     position: relative;
     z-index: 10;
-}
-
-.copywriting-page.page-visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .cp-inner {

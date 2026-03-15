@@ -32,346 +32,31 @@
 
     <nav class="navbar">
         <div class="logo">
-            <a href="index.html"><img src="resources/logo.svg" alt="3F Solutions Logo"></a>
+            <a href="#home" data-page="home" class="spa-link"><img src="resources/logo.svg" alt="3F Solutions Logo"></a>
         </div>
         <div class="nav-menu">
-            <a href="index.html" class="nav-link active">3F</a>
-            <a href="o-nama.html" class="nav-link">O Nama</a>
-            <a href="usluge.html" class="nav-link">Usluge</a>
+            <a href="#home" class="nav-link" data-page="home">3F</a>
+            <a href="#o-nama" class="nav-link" data-page="o-nama">O Nama</a>
+            <a href="#usluge" class="nav-link" data-page="usluge">Usluge</a>
         </div>
         <div class="navbar-cta-slot">
             <a href="#" onclick="openBooking(event)" class="btn btn-primary" id="navbar-cta">Book a call</a>
         </div>
     </nav>
 
-    <main class="home-page">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <p class="eyebrow">Is your business growing faster than your digital setup can handle?</p>
-                <h1 class="hero-title">
-                    Unlock the full potential of your business with the right <span class="gradient-text">digital solution</span>
-                </h1>
-                <p class="hero-deck">
-                    Our team of specialists helps solve real problems: from user experience issues to fixing what's slowing business growth and revenue.
-                </p>
-                <div class="cta-wrapper" id="cta-wrapper">
-                    <a href="#" onclick="openBooking(event)" class="btn btn-primary" id="hero-cta">Book a call</a>
-                </div>
-            </div>
-            <div class="hero-logo">
-                <img src="resources/logo.svg" alt="3F Solutions">
-            </div>
-        </section>
+    <!-- SPA page content renders here -->
+    <div id="page-container"></div>
 
-        <!-- Service Pills -->
-        <section class="service-pills">
-            <div class="pill">
-                <span class="pill-icon design">◆</span>
-                <span>Visual design & Animations</span>
-            </div>
-            <div class="pill">
-                <span class="pill-icon software">◆</span>
-                <span>Websites & Custom Software</span>
-            </div>
-            <div class="pill">
-                <span class="pill-icon copy">◆</span>
-                <span>Copywriting, Conversion & Strategy</span>
-            </div>
-            <div class="pill">
-                <span class="pill-icon systems">◆</span>
-                <span>AI Integration & Process Automation</span>
-            </div>
-        </section>
-
-        <!-- How We Can Help Section -->
-        <section class="help-section">
-            <h2 class="section-heading">How we can help you</h2>
-
-            <div class="help-grid">
-                <div class="help-card">
-                    <div class="help-card-header">
-                        <div class="help-card-icon design">
-                            <img src="resources/graphic.svg" alt="Design" width="24" height="24">
-                        </div>
-                        <h3>Visual design & Animations</h3>
-                    </div>
-                    <p class="help-problem">With poor design, people get confused, hesitate and lose interest.</p>
-                    <p class="help-solution">We build clear and consistent user experiences that communicate value quickly and make it easier for people to take the next step.</p>
-                    <a href="usluge.html" class="btn btn-outline">Explore</a>
-                </div>
-
-                <div class="help-card">
-                    <div class="help-card-header">
-                        <div class="help-card-icon software">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8.06562 18.9434L14.5656 4.44339C14.7351 4.06542 15.1788 3.89637 15.5568 4.0658C15.9033 4.22112 16.0742 4.60695 15.9698 4.96131L15.9344 5.05698L9.43438 19.557C9.26495 19.935 8.82118 20.104 8.44321 19.9346C8.09673 19.7793 7.92581 19.3934 8.03024 19.0391L8.06562 18.9434L14.5656 4.44339L8.06562 18.9434ZM2.21967 11.4699L6.46967 7.21986C6.76256 6.92696 7.23744 6.92696 7.53033 7.21986C7.7966 7.48612 7.8208 7.90279 7.60295 8.1964L7.53033 8.28052L3.81066 12.0002L7.53033 15.7199C7.82322 16.0127 7.82322 16.4876 7.53033 16.7805C7.26406 17.0468 6.8474 17.071 6.55379 16.8531L6.46967 16.7805L2.21967 12.5305C1.9534 12.2642 1.9292 11.8476 2.14705 11.554L2.21967 11.4699L6.46967 7.21986L2.21967 11.4699ZM16.4697 7.21986C16.7359 6.95359 17.1526 6.92938 17.4462 7.14724L17.5303 7.21986L21.7803 11.4699C22.0466 11.7361 22.0708 12.1528 21.8529 12.4464L21.7803 12.5305L17.5303 16.7805C17.2374 17.0734 16.7626 17.0734 16.4697 16.7805C16.2034 16.5143 16.1792 16.0976 16.3971 15.804L16.4697 15.7199L20.1893 12.0002L16.4697 8.28052C16.1768 7.98762 16.1768 7.51275 16.4697 7.21986Z" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <h3>Websites & Custom Software</h3>
-                    </div>
-                    <p class="help-problem">Your digital foundation should support growth and day-to-day work, not limit either.</p>
-                    <p class="help-solution">We develop reliable websites and custom applications tailored to how your business actually operates.</p>
-                    <a href="usluge.html" class="btn btn-outline">Explore</a>
-                </div>
-
-                <div class="help-card">
-                    <div class="help-card-header">
-                        <div class="help-card-icon copy">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.5 8C8.84315 8 7.5 9.34315 7.5 11C7.5 12.6569 8.84315 14 10.5 14C12.1569 14 13.5 12.6569 13.5 11C13.5 9.34315 12.1569 8 10.5 8ZM9 11C9 10.1716 9.67157 9.5 10.5 9.5C11.3284 9.5 12 10.1716 12 11C12 11.8284 11.3284 12.5 10.5 12.5C9.67157 12.5 9 11.8284 9 11ZM2 7.25C2 6.00736 3.00736 5 4.25 5H16.75C17.9926 5 19 6.00736 19 7.25V14.75C19 15.9926 17.9926 17 16.75 17H4.25C3.00736 17 2 15.9926 2 14.75V7.25ZM4.25 6.5C3.83579 6.5 3.5 6.83579 3.5 7.25V8H4.25C4.66421 8 5 7.66421 5 7.25V6.5H4.25ZM3.5 12.5H4.25C5.49264 12.5 6.5 13.5074 6.5 14.75V15.5H14.5V14.75C14.5 13.5074 15.5074 12.5 16.75 12.5H17.5V9.5H16.75C15.5074 9.5 14.5 8.49264 14.5 7.25V6.5H6.5V7.25C6.5 8.49264 5.49264 9.5 4.25 9.5H3.5V12.5ZM17.5 8V7.25C17.5 6.83579 17.1642 6.5 16.75 6.5H16V7.25C16 7.66421 16.3358 8 16.75 8H17.5ZM17.5 14H16.75C16.3358 14 16 14.3358 16 14.75V15.5H16.75C17.1642 15.5 17.5 15.1642 17.5 14.75V14ZM3.5 14.75C3.5 15.1642 3.83579 15.5 4.25 15.5H5V14.75C5 14.3358 4.66421 14 4.25 14H3.5V14.75ZM4.40137 18.5C4.92008 19.3967 5.8896 20 7.00002 20H17.25C19.8734 20 22 17.8734 22 15.25V10C22 8.8896 21.3967 7.92008 20.5 7.40137V15.25C20.5 17.0449 19.0449 18.5 17.25 18.5H4.40137Z" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <h3>Copywriting, Conversion & Strategy</h3>
-                    </div>
-                    <p class="help-problem">Good traffic is wasted if the message isn't clear.</p>
-                    <p class="help-solution">We help businesses clarify what they offer, why it matters, and what people should do next.</p>
-                    <button class="btn btn-outline" onclick="navigateToCopywriting()">Explore</button>
-                </div>
-
-                <div class="help-card">
-                    <div class="help-card-header">
-                        <div class="help-card-icon systems">
-                            <img src="resources/wheel.svg" alt="Systems" width="24" height="24">
-                        </div>
-                        <h3>AI Integration & Process Automation</h3>
-                    </div>
-                    <p class="help-problem">Manual processes cost businesses time, money, and focus.</p>
-                    <p class="help-solution">We design AI-powered systems that automate repetitive work and keep operations running smoothly in the background.</p>
-                    <a href="usluge.html" class="btn btn-outline">Explore</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- How We Work Together Section -->
-        <section class="work-together-section">
-            <div class="wt-container" id="wt-container">
-                <svg class="wt-svg" id="wt-svg" aria-hidden="true"></svg>
-
-                <div class="wt-node" id="wt-top">
-                    <div class="wt-node-front">
-                        <div class="wt-icon">
-                            <svg width="54" height="54" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="4" r="2" stroke="currentColor" stroke-width="1.5"/>
-                                <circle cx="4" cy="20" r="2" stroke="currentColor" stroke-width="1.5"/>
-                                <circle cx="20" cy="20" r="2" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M12 6v3.5M10.5 9.5L5 18M13.5 9.5L19 18M6 18h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <h3>How we work together</h3>
-                    </div>
-                    <div class="wt-node-back">
-                        <p>Not every business needs the same level of involvement. Rather than selling predefined services, we focus on understanding the problem and taking responsibility for solving it properly.</p>
-                    </div>
-                </div>
-
-                <div class="wt-node" id="wt-left">
-                    <div class="wt-node-front">
-                        <div class="wt-icon">
-                            <svg width="54" height="54" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2" y="9" width="5" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
-                                <rect x="9.5" y="9" width="5" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
-                                <rect x="17" y="9" width="5" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
-                                <line x1="7" y1="12" x2="9.5" y2="12" stroke="currentColor" stroke-width="1.5"/>
-                                <line x1="14.5" y1="12" x2="17" y2="12" stroke="currentColor" stroke-width="1.5"/>
-                            </svg>
-                        </div>
-                        <h3>End-to-end projects</h3>
-                    </div>
-                    <div class="wt-node-back">
-                        <p>For businesses that want one team to take responsibility for the full outcome. These projects typically involve multiple areas of work across design, development, and systems. We assemble the right team for each project.</p>
-                    </div>
-                </div>
-
-                <div class="wt-node" id="wt-right">
-                    <div class="wt-node-front">
-                        <div class="wt-icon">
-                            <svg width="54" height="54" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
-                                <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/>
-                                <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <h3>Single Engagement</h3>
-                    </div>
-                    <div class="wt-node-back">
-                        <p>For businesses that know exactly what they need and want it handled properly. This might be a website, a system, a piece of copy, or a specific improvement. The scope is smaller, but the level of care and attention remains the same.</p>
-                    </div>
-                </div>
-
-                <div class="wt-node" id="wt-bottom">
-                    <div class="wt-node-front">
-                        <div class="wt-icon">
-                            <svg width="54" height="54" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M16.24 7.76L13.41 13.41L7.76 16.24L10.59 10.59L16.24 7.76Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3>What this means in practice</h3>
-                    </div>
-                    <div class="wt-node-back">
-                        <p>We value clear communication, mutual trust, and realistic expectations. If it's a good fit, we work closely and take responsibility. If it's not, we'll be honest about it early.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Copywriting Detail Page -->
-    <div id="page-copywriting" class="copywriting-page">
-        <div class="cp-inner">
-
-            <button class="back-btn" onclick="navigateBack()">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Back
-            </button>
-
-            <div class="cp-header">
-                <p class="cp-eyebrow">Copywriting</p>
-                <h1 class="cp-title">Funnel, Conversion<br>& Strategy</h1>
-                <p class="cp-subtitle">Good traffic is wasted if the message isn't clear. We help you say the right thing, to the right people, at the right moment.</p>
-            </div>
-
-            <div class="cp-services">
-
-                <div class="cp-service-item">
-                    <span class="cp-service-num">01</span>
-                    <div class="cp-service-content">
-                        <h3>Messaging Strategy</h3>
-                        <p>We clarify your offer and positioning so visitors understand your value in seconds.</p>
-                    </div>
-                </div>
-
-                <div class="cp-service-item">
-                    <span class="cp-service-num">02</span>
-                    <div class="cp-service-content">
-                        <h3>Conversion Copy</h3>
-                        <p>Headlines, sales pages, and funnels written to turn readers into buyers.</p>
-                    </div>
-                </div>
-
-                <div class="cp-service-item">
-                    <span class="cp-service-num">03</span>
-                    <div class="cp-service-content">
-                        <h3>Content & SEO</h3>
-                        <p>We plan and write content that ranks and educates your audience.</p>
-                    </div>
-                </div>
-
-                <div class="cp-service-item">
-                    <span class="cp-service-num">04</span>
-                    <div class="cp-service-content">
-                        <h3>A/B Testing & Analytics</h3>
-                        <p>We measure everything and refine pages to squeeze out extra sales.</p>
-                    </div>
-                </div>
-
-                <div class="cp-service-item">
-                    <span class="cp-service-num">05</span>
-                    <div class="cp-service-content">
-                        <h3>Email & Ads Campaigns</h3>
-                        <p>Persuasive email sequences and ads to nurture leads and drive action.</p>
-                    </div>
-                </div>
-
-                <div class="cp-service-item">
-                    <span class="cp-service-num">06</span>
-                    <div class="cp-service-content">
-                        <h3>Funnel Architecture</h3>
-                        <p>We design customer journeys — landing pages, upsells, follow-ups — that guide buyers step-by-step.</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="cp-cta">
-                <p class="cp-cta-text">Ready to convert?</p>
-                <p class="cp-cta-sub">Let's talk about your funnel and where we can help.</p>
-                <a href="#" onclick="openBooking(event)" class="btn btn-primary">Book a call</a>
-            </div>
-
-        </div>
-    </div>
-
-    <script>
-        // Draw SVG connecting lines between work-together nodes
-        function drawWtLines() {
-            const container = document.getElementById('wt-container');
-            const svg = document.getElementById('wt-svg');
-            if (!container || !svg) return;
-
-            // Hide on mobile (CSS hides the SVG, but skip computation too)
-            if (window.getComputedStyle(svg).display === 'none') return;
-
-            const cr = container.getBoundingClientRect();
-
-            function pt(el, edge) {
-                const r = el.getBoundingClientRect();
-                const cx = r.left - cr.left + r.width / 2;
-                const cy = r.top - cr.top + r.height / 2;
-                if (edge === 'bottom') return { x: cx, y: r.top - cr.top + r.height };
-                if (edge === 'top')    return { x: cx, y: r.top - cr.top };
-                if (edge === 'left')   return { x: r.left - cr.left, y: cy };
-                if (edge === 'right')  return { x: r.left - cr.left + r.width, y: cy };
-                return { x: cx, y: cy };
-            }
-
-            const top    = document.getElementById('wt-top');
-            const left   = document.getElementById('wt-left');
-            const right  = document.getElementById('wt-right');
-            const bottom = document.getElementById('wt-bottom');
-
-            const pTop     = pt(top,    'center');
-            const pLeft    = pt(left,   'center');
-            const pRight   = pt(right,  'center');
-            const pLright  = pt(left,   'right');
-            const pRleft   = pt(right,  'left');
-            const pBot     = pt(bottom, 'top');
-
-            const midX = (pLeft.x + pRight.x) / 2;
-            const midY = pLeft.y;
-
-            const W = cr.width;
-            const H = cr.height;
-            svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-            svg.setAttribute('width', W);
-            svg.setAttribute('height', H);
-
-            const c = '#11cece';
-            const op = '0.45';
-            const dot = 3;
-
-            function line(x1, y1, x2, y2) {
-                return `
-                    <line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"
-                          stroke="${c}" stroke-width="1.5" stroke-opacity="${op}" stroke-dasharray="5 8" stroke-linecap="round"/>
-                    <circle cx="${x1}" cy="${y1}" r="${dot}" fill="${c}" fill-opacity="${op}"/>
-                    <circle cx="${x2}" cy="${y2}" r="${dot}" fill="${c}" fill-opacity="${op}"/>
-                `;
-            }
-
-            svg.innerHTML =
-                line(pTop.x, pTop.y, pLeft.x,  pLeft.y)  +
-                line(pTop.x, pTop.y, pRight.x, pRight.y) +
-                line(pLright.x, pLright.y, pRleft.x, pRleft.y) +
-                line(midX, midY, pBot.x, pBot.y);
-        }
-
-        window.addEventListener('load', drawWtLines);
-        window.addEventListener('resize', drawWtLines);
-    </script>
     <script src="stars.js"></script>
     <script>
         (function() {
-            const overlay = document.getElementById('intro-overlay');
-            const video = document.getElementById('intro-video');
-            const introTextTop = document.getElementById('intro-text-top');
-            const rotatingWord = document.getElementById('rotating-word');
-            const skipText = document.getElementById('intro-skip');
+            var overlay = document.getElementById('intro-overlay');
+            var video = document.getElementById('intro-video');
+            var introTextTop = document.getElementById('intro-text-top');
+            var rotatingWord = document.getElementById('rotating-word');
+            var skipText = document.getElementById('intro-skip');
 
-            const words = [
+            var words = [
                 "grow",
                 "scale",
                 "convert",
@@ -384,13 +69,12 @@
                 "look premium"
             ];
 
-            let wordIndex = 0;
-            let wordInterval = null;
+            var wordIndex = 0;
+            var wordInterval = null;
 
             // Check if user has seen intro before
             if (sessionStorage.getItem('introSeen')) {
                 overlay.style.display = 'none';
-                // Init stars with normal scroll (page is scrollable)
                 StarBackground.init({ virtualScroll: false });
                 return;
             }
@@ -398,47 +82,32 @@
             // Init stars without scroll during intro
             StarBackground.init({ scrollable: false, virtualScroll: false });
 
-            // Try to play video - multiple attempts for browser compatibility
             function tryPlayVideo() {
-                const playPromise = video.play();
+                var playPromise = video.play();
                 if (playPromise !== undefined) {
-                    playPromise.catch(function(error) {
-                        // Autoplay blocked - try again on user interaction
-                        console.log('Autoplay blocked, waiting for interaction');
-                    });
+                    playPromise.catch(function() {});
                 }
             }
 
-            // Try playing when video is ready
             video.addEventListener('canplaythrough', tryPlayVideo);
+            if (video.readyState >= 3) tryPlayVideo();
 
-            // Also try if already loaded (cached)
-            if (video.readyState >= 3) {
-                tryPlayVideo();
-            }
-
-            // Show top text earlier (at 50% of video)
             video.addEventListener('timeupdate', function() {
-                const progress = video.currentTime / video.duration;
+                var progress = video.currentTime / video.duration;
                 if (progress >= 0.5 && !introTextTop.classList.contains('visible')) {
                     introTextTop.classList.add('visible');
-                    // Show first word
                     rotatingWord.textContent = words[0];
                     rotatingWord.classList.add('animate-in');
                 }
             });
 
-            // Start rotating words when video ends
             video.addEventListener('ended', function() {
                 skipText.classList.add('visible');
-
-                // Fade out video and show static logo
                 video.classList.add('fade-out');
                 setTimeout(function() {
                     document.getElementById('intro-logo-static').classList.add('visible');
                 }, 500);
 
-                // Rotate words every 2 seconds
                 wordInterval = setInterval(function() {
                     rotatingWord.classList.remove('animate-in');
                     rotatingWord.classList.add('animate-out');
@@ -452,106 +121,24 @@
                 }, 2000);
             });
 
-            // Click anywhere to dismiss
             overlay.addEventListener('click', function() {
                 if (wordInterval) clearInterval(wordInterval);
                 overlay.classList.add('fade-out');
                 sessionStorage.setItem('introSeen', 'true');
-
-                // Enable scrolling after intro ends
                 StarBackground.enableScroll();
-
                 setTimeout(function() {
                     overlay.style.display = 'none';
                 }, 600);
             });
 
-            // Allow skip with any key
-            document.addEventListener('keydown', function(e) {
+            document.addEventListener('keydown', function() {
                 if (overlay.style.display !== 'none') {
                     overlay.click();
                 }
             });
         })();
     </script>
-    <script>
-        // Smooth page navigation — home ↔ copywriting (stars zoom, content swaps)
-        (function() {
-            var homePage = document.querySelector('.home-page');
-
-            window.navigateToCopywriting = function() {
-                var copyPage = document.getElementById('page-copywriting');
-                var sc = document.getElementById('star-container');
-
-                // Fade out home page + zoom stars simultaneously
-                homePage.classList.add('page-exit');
-                if (sc) sc.classList.add('zoomed');
-
-                setTimeout(function() {
-                    // Swap pages
-                    homePage.style.display = 'none';
-                    window.scrollTo(0, 0);
-                    copyPage.style.display = 'block';
-                    copyPage.offsetHeight; // force reflow so transition fires
-                    copyPage.classList.add('page-visible');
-
-                    history.pushState({ page: 'copywriting' }, '', '#copywriting');
-                }, 480);
-            };
-
-            window.navigateBack = function() {
-                var copyPage = document.getElementById('page-copywriting');
-                var sc = document.getElementById('star-container');
-
-                // Fade out copywriting page + unzoom stars
-                copyPage.classList.remove('page-visible');
-                if (sc) sc.classList.remove('zoomed');
-
-                setTimeout(function() {
-                    copyPage.style.display = 'none';
-                    window.scrollTo(0, 0);
-                    // Home page still has page-exit (opacity 0) — show it, then fade in
-                    homePage.style.display = 'block';
-                    homePage.offsetHeight; // force reflow
-                    homePage.classList.remove('page-exit');
-
-                    history.pushState({ page: 'home' }, '', window.location.pathname);
-                }, 480);
-            };
-
-            // Browser back/forward button support
-            window.addEventListener('popstate', function() {
-                var copyPage = document.getElementById('page-copywriting');
-                var isOnCopy = copyPage.style.display === 'block';
-                if (window.location.hash === '#copywriting' && !isOnCopy) {
-                    window.navigateToCopywriting();
-                } else if (window.location.hash !== '#copywriting' && isOnCopy) {
-                    window.navigateBack();
-                }
-            });
-        })();
-    </script>
-    <script>
-        // Show "Book a call" in navbar when hero CTA scrolls out of view
-        (function() {
-            const ctaWrapper = document.getElementById('cta-wrapper');
-            const navbarCta = document.getElementById('navbar-cta');
-
-            if (!ctaWrapper || !navbarCta) return;
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        navbarCta.classList.remove('visible');
-                    } else {
-                        navbarCta.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0 });
-
-            observer.observe(ctaWrapper);
-        })();
-    </script>
+    <script src="router.js"></script>
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <script>
         function openBooking(e) {
