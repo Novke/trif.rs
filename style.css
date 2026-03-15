@@ -1137,7 +1137,7 @@ body {
 .work-together-section {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 80px 48px 100px;
+    padding: 10px 48px 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1272,11 +1272,14 @@ body {
 }
 
 .wt-node h3 {
-    font-size: 22px;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 25px;
+    font-weight: 700;
+    color: rgba(140, 210, 230, 0.85);
     margin: 0;
-    line-height: 1.25;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    max-width: 250px;
 }
 
 
@@ -1326,7 +1329,7 @@ body {
     }
 
     .wt-node h3 {
-        font-size: 18px;
+        font-size: 13px;
     }
 }
 
@@ -1493,7 +1496,7 @@ body {
     }
 
     .wt-node h3 {
-        font-size: 18px;
+        font-size: 13px;
     }
 
     .wt-node-back p {
