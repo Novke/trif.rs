@@ -476,13 +476,13 @@ a:hover > .roll > span, a:focus-visible > .roll > span { transform: translateY(-
     margin: 0 auto;
     padding: 12vh var(--pad);
 }
-.chapter-in { width: min(48%, 640px); }
+.chapter-in { width: min(48%, 640px); container-type: inline-size; }
 .chapter-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
 .owner { display: inline-flex; align-items: center; gap: 10px; font-size: 15px; color: var(--muted); }
 .owner img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: 50% 18%; background: var(--ink-3); }
 .chapter h3 {
     margin: 0;
-    font-size: clamp(52px, 7.6vw, 128px);
+    font-size: min(clamp(52px, 7.6vw, 128px), 17.8cqi);
     line-height: .9;
     letter-spacing: -.05em;
     font-weight: 700;
