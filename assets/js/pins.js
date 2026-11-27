@@ -50,7 +50,10 @@
         '  col += uInfra * 0.16 * uMouse.z * exp(-md * md / 70.0) * (0.35 + top);\n' +
         '  vec2 s = gl_FragCoord.xy / uRes - 0.5; s.x *= uRes.x / uRes.y;\n' +
         '  float vig = 1.0 - smoothstep(0.42, 1.05, length(s * vec2(0.82, 1.0)));\n' +
-        '  col = mix(uBg, col, vig * (1.0 - uDim * 0.62) * uFade);\n' +
+        '  float lift = smoothstep(0.03, 0.32, h);\n' +
+        '  float near = uMouse.z * exp(-md * md / 260.0);\n' +
+        '  float vis = mix(0.07, 1.0, clamp(max(max(lift, heat), near * 0.75), 0.0, 1.0));\n' +
+        '  col = mix(uBg, col, vis * vig * (1.0 - uDim * 0.8) * uFade);\n' +
         '  float r = fract(sin(dot(gl_FragCoord.xy, vec2(12.9898, 78.233))) * 43758.5453);\n' +
         '  col += (r - 0.5) / 200.0;\n' +
         '  o = vec4(col, 1.0);\n' +
