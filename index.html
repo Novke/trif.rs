@@ -14,7 +14,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/svg+xml" href="resources/logo.svg">
     <link rel="preload" href="assets/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/css/site.css?v=3">
+    <link rel="stylesheet" href="assets/css/site.css?v=4">
     <script>
         (function () {
             var d = document.documentElement, rm = matchMedia('(prefers-reduced-motion: reduce)').matches, seen = false;
@@ -77,12 +77,12 @@
             <span>3F Solutions</span>
         </a>
         <nav class="nav-links" aria-label="Glavna navigacija">
-            <a href="#usluge">Usluge</a>
-            <a href="#tim">Tim</a>
-            <a href="#kako-radimo">Kako radimo</a>
-            <a href="#kontakt">Kontakt</a>
+            <a href="#usluge"><span class="roll"><span>Usluge</span></span></a>
+            <a href="#tim"><span class="roll"><span>Tim</span></span></a>
+            <a href="#kako-radimo"><span class="roll"><span>Kako radimo</span></span></a>
+            <a href="#kontakt"><span class="roll"><span>Kontakt</span></span></a>
         </nav>
-        <a class="btn btn-sm" href="#kontakt" data-magnetic>Pišite nam <span class="arr">→</span></a>
+        <a class="btn btn-sm" href="#kontakt" data-magnetic><span class="roll"><span>Pišite nam</span></span> <span class="arr">→</span></a>
         <button class="burger" type="button" aria-label="Meni" aria-expanded="false"><span></span><span></span></button>
     </header>
 
@@ -96,7 +96,7 @@
 
     <main>
         <section class="hero" id="top" data-field="logo" data-place="hero" data-dim-m=".35">
-            <p class="label">Softver · Dizajn · Copywriting</p>
+            <p class="label kicker">Softver · Dizajn · Copywriting</p>
             <h1 class="hero-title" aria-label="Fast. Flexible. Fantastic.">
                 <span class="ln"><span class="ln-in">Fast<span class="dot">.</span></span></span>
                 <span class="ln"><span class="ln-in">Flexible<span class="dot">.</span></span></span>
@@ -104,12 +104,16 @@
             </h1>
             <p class="hero-sub">Softver, dizajn i copywriting iz jednog tima. Vaša vizija, naša realizacija: od ideje do proizvoda koji izgleda vrhunski i radi bez greške.</p>
             <div class="hero-cta">
-                <a class="btn" href="#kontakt" data-magnetic>Pokrenimo projekat <span class="arr">→</span></a>
-                <a class="btn btn-ghost" href="#usluge" data-magnetic>Šta radimo</a>
+                <a class="btn" href="#kontakt" data-magnetic><span class="roll"><span>Pokrenimo projekat</span></span> <span class="arr">→</span></a>
+                <a class="btn btn-ghost" href="#usluge" data-magnetic><span class="roll"><span>Šta radimo</span></span></a>
             </div>
             <div class="hero-foot">
-                <span class="hint label"><i></i>Pomerite kursor kroz iglice, kliknite za talas</span>
-                <span class="scroll-cue label"><span></span>Skrolujte</span>
+                <nav class="trio" aria-label="Oblasti">
+                    <a href="#softver"><img src="resources/employees/novica-tim.webp" alt="" loading="lazy"><span class="t"><b>Softver</b><span>Vodi Novica</span></span></a>
+                    <a href="#dizajn"><img src="resources/employees/bosko-tim.webp" alt="" loading="lazy"><span class="t"><b>Dizajn</b><span>Vodi Boško</span></span></a>
+                    <a href="#copywriting"><img src="resources/employees/steva-tim.webp" alt="" loading="lazy"><span class="t"><b>Copywriting</b><span>Vodi Steva</span></span></a>
+                </nav>
+                <span class="hint">Pomerite kursor kroz iglice, kliknite za talas</span>
             </div>
         </section>
 
@@ -126,7 +130,7 @@
                 <h2 class="h2 split" data-split>Tri zanata. Jedan tim.</h2>
             </div>
 
-            <article class="chapter" data-field="code" data-place="right" data-yaw="-.08">
+            <article class="chapter" id="softver" data-field="code" data-place="right" data-yaw="-.08">
                 <div class="chapter-in">
                     <div class="chapter-top" data-reveal>
                         <span class="label">Softver</span>
@@ -146,7 +150,7 @@
                 </div>
             </article>
 
-            <article class="chapter" data-field="design" data-place="right" data-yaw=".08">
+            <article class="chapter" id="dizajn" data-field="design" data-place="right" data-yaw=".08">
                 <div class="chapter-in">
                     <div class="chapter-top" data-reveal>
                         <span class="label">Dizajn</span>
@@ -166,7 +170,7 @@
                 </div>
             </article>
 
-            <article class="chapter" data-field="copy" data-place="right" data-yaw="-.06">
+            <article class="chapter" id="copywriting" data-field="copy" data-place="right" data-yaw="-.06">
                 <div class="chapter-in">
                     <div class="chapter-top" data-reveal>
                         <span class="label">Copywriting</span>
@@ -296,7 +300,7 @@
                     <h2 class="h2 split" data-split>Imate ideju? Hajde da je napravimo.</h2>
                     <p class="lead" data-reveal>Opišite u dve rečenice šta vam treba. Javljamo se da dogovorimo kratak poziv i predložimo kako da krenemo.</p>
                     <div data-reveal>
-                        <a class="btn" href="mailto:novicatrifkovic@gmail.com?subject=Upit%20za%203F%20Solutions" data-magnetic>Pošaljite upit <span class="arr">→</span></a>
+                        <a class="btn" href="mailto:novicatrifkovic@gmail.com?subject=Upit%20za%203F%20Solutions" data-magnetic><span class="roll"><span>Pošaljite upit</span></span> <span class="arr">→</span></a>
                     </div>
                     <ul class="direct" data-reveal>
                         <li><a href="mailto:novicatrifkovic@gmail.com"><b>Novica</b><span>Softver i web aplikacije</span></a></li>
@@ -309,14 +313,27 @@
     </main>
 
     <footer class="footer">
-        <span>© 2026 3F Solutions · trif.rs</span>
-        <nav aria-label="Lični sajtovi">
-            <a href="https://novica.trif.rs" target="_blank" rel="noopener">novica.trif.rs</a>
-            <a href="https://bosko.trif.rs" target="_blank" rel="noopener">bosko.trif.rs</a>
-        </nav>
+        <a class="footer-mark" href="#top" aria-label="3F Solutions, na vrh" data-reveal>
+            <svg viewBox="180 135 720 752" aria-hidden="true">
+                <rect class="b" x="200.34" y="305.69" width="52.36" height="427.75"/>
+                <rect class="b" x="324.26" y="222" width="52.36" height="595.13"/>
+                <rect class="b" x="446.22" y="155.06" width="52.36" height="711.88"/>
+                <rect class="a" x="566.81" y="155.26" width="312.85" height="52.36"/>
+                <rect class="a" x="566.81" y="451.02" width="223.33" height="52.36"/>
+            </svg>
+            <span>3F Solutions</span>
+        </a>
+        <div class="footer-bar">
+            <span>© 2026 3F Solutions · trif.rs</span>
+            <span>Fast. Flexible. Fantastic.</span>
+            <nav aria-label="Lični sajtovi">
+                <a href="https://novica.trif.rs" target="_blank" rel="noopener"><span class="roll"><span>novica.trif.rs</span></span></a>
+                <a href="https://bosko.trif.rs" target="_blank" rel="noopener"><span class="roll"><span>bosko.trif.rs</span></span></a>
+            </nav>
+        </div>
     </footer>
 
-    <script src="assets/js/pins.js?v=3"></script>
-    <script src="assets/js/site.js?v=3"></script>
+    <script src="assets/js/pins.js?v=4"></script>
+    <script src="assets/js/site.js?v=4"></script>
 </body>
 </html>
