@@ -373,7 +373,7 @@ a:hover > .roll > span, a:focus-visible > .roll > span { transform: translateY(-
 .lead { font-size: clamp(18px, 1.5vw, 22px); line-height: 1.5; color: #c2cfd0; max-width: 34em; }
 [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 1s var(--ease), transform 1.1s var(--ease); transition-delay: var(--d, 0s); }
 [data-reveal].in { opacity: 1; transform: none; }
-.split .w { display: inline-block; overflow: hidden; vertical-align: top; padding: .14em .08em .22em; margin: -.14em -.08em -.22em; }
+.split .w { display: inline-block; overflow: hidden; vertical-align: top; padding: .14em .2em .22em .1em; margin: -.14em -.2em -.22em -.1em; }
 .split .w > span { display: inline-block; transform: translateY(140%); transition: transform 1.1s var(--ease); transition-delay: calc(var(--i) * 45ms + var(--d, 0s)); }
 .split.in .w > span { transform: none; }
 
