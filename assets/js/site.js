@@ -260,33 +260,16 @@
 
     /* ---------- glavna petlja ---------- */
 
-    /* ---------- scene usluga na hover ---------- */
-    var peek = $('.peek'), peekIn = peek && peek.firstElementChild, pkx = innerWidth / 2, pky = innerHeight / 2, pkr = 0;
-    if (peek && fine) {
-        $$('.chapter[data-peek]').forEach(function (ch) {
-            var img = ch.getAttribute('data-peek');
-            var items = $$('.svc li', ch);
-            items.forEach(function (li, i) {
-                li.addEventListener('mouseenter', function () {
-                    peekIn.style.backgroundImage = 'url("' + img + '")';
-                    var x = items.length > 1 ? i / (items.length - 1) * 100 : 50;
-                    peekIn.style.setProperty('--pp', x.toFixed(0) + '% ' + (i % 2 ? 25 : 75) + '%');
-                    peek.classList.add('is-on');
-                });
-                li.addEventListener('mouseleave', function () { peek.classList.remove('is-on'); });
-            });
+    /* ---------- scene usluga (parallax u okviru) ---------- */
+    var covers = $$('.cover img');
+    function coverFrame() {
+        if (reduced) return;
+        covers.forEach(function (img) {
+            var r = img.parentNode.getBoundingClientRect();
+            if (r.bottom < 0 || r.top > innerHeight) return;
+            var p = clamp((r.top + r.height / 2) / innerHeight - 0.5, -0.7, 0.7);
+            img.style.setProperty('--cy', (p * -7).toFixed(2) + '%');
         });
-        addEventListener('load', function () {
-            setTimeout(function () { $$('.chapter[data-peek]').forEach(function (ch) { new Image().src = ch.getAttribute('data-peek'); }); }, 800);
-        });
-    } else peek = null;
-    function peekFrame() {
-        if (!peek) return;
-        var tx = mx + 48, ty = my;
-        var vx = tx - pkx;
-        pkx += vx * 0.14; pky += (ty - pky) * 0.14;
-        pkr += (clamp(vx * 0.05, -9, 9) - pkr) * 0.12;
-        peek.style.transform = 'translate3d(' + pkx.toFixed(1) + 'px,' + pky.toFixed(1) + 'px,0) rotate(' + pkr.toFixed(2) + 'deg)';
     }
 
     var lastT = performance.now();
@@ -303,7 +286,7 @@
             ring.style.transform = 'translate3d(' + rx.toFixed(1) + 'px,' + ry.toFixed(1) + 'px,0)';
         }
         sections();
-        peekFrame();
+        coverFrame();
         manifest();
         marquee(dt);
         letters();
