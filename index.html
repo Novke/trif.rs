@@ -14,7 +14,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/svg+xml" href="resources/logo.svg">
     <link rel="preload" href="assets/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/css/site.css?v=1">
+    <link rel="stylesheet" href="assets/css/site.css?v=2">
     <script>
         (function () {
             var d = document.documentElement, rm = matchMedia('(prefers-reduced-motion: reduce)').matches, seen = false;
@@ -54,14 +54,6 @@
         <span class="intro-skip label">Klik za preskok</span>
     </div>
 
-    <div class="backdrop" aria-hidden="true">
-        <div class="bd bd-hero" data-bd-layer="hero"></div>
-        <div class="bd bd-manifest" data-bd-layer="manifest"></div>
-        <div class="bd bd-softver" data-bd-layer="softver"></div>
-        <div class="bd bd-dizajn" data-bd-layer="dizajn"></div>
-        <div class="bd bd-copy" data-bd-layer="copy"></div>
-        <div class="bd bd-kontakt" data-bd-layer="kontakt"></div>
-    </div>
     <canvas id="field" aria-hidden="true"></canvas>
     <svg class="field-fallback" viewBox="180 135 720 752" aria-hidden="true">
         <rect x="200.34" y="305.69" width="52.36" height="427.75"/>
@@ -71,6 +63,7 @@
         <rect x="566.81" y="451.02" width="223.33" height="52.36"/>
     </svg>
     <div class="grain" aria-hidden="true"></div>
+    <div class="peek" aria-hidden="true"><div class="peek-in"></div></div>
     <div class="cursor" aria-hidden="true"><span class="cursor-ring"><span class="cursor-label"></span></span><span class="cursor-dot"></span></div>
 
     <header class="nav" id="nav">
@@ -103,12 +96,12 @@
     </div>
 
     <main>
-        <section class="hero" id="top" data-bd="hero" data-field="logo" data-place="hero" data-dim-m=".35">
+        <section class="hero" id="top" data-field="logo" data-place="hero" data-dim-m=".35">
             <p class="label">Softver · Dizajn · Copywriting</p>
             <h1 class="hero-title" aria-label="Fast. Flexible. Fantastic.">
                 <span class="ln"><span class="ln-in">Fast<span class="dot">.</span></span></span>
                 <span class="ln"><span class="ln-in">Flexible<span class="dot">.</span></span></span>
-                <span class="ln"><span class="ln-in">Fantastic<span class="dot">.</span></span></span>
+                <span class="ln"><span class="ln-in tx tx-tecno">Fantastic<span class="dot">.</span></span></span>
             </h1>
             <p class="hero-sub">Softver, dizajn i copywriting iz jednog tima. Vaša vizija, naša realizacija: od ideje do proizvoda koji izgleda vrhunski i radi bez greške.</p>
             <div class="hero-cta">
@@ -121,7 +114,7 @@
             </div>
         </section>
 
-        <section class="manifest" data-bd="manifest" data-field="bars" data-place="center" data-dim="1">
+        <section class="manifest" data-field="bars" data-place="center" data-dim="1">
             <div class="manifest-pin">
                 <p class="label">3F Solutions</p>
                 <p class="manifest-text" data-manifest>Svaka oblast ima svog čoveka koji je vodi. Vi dobijate <em class="inf">jednog sagovornika</em> i <em class="inf">jedan rok,</em> a iza toga stoje <em class="hi">tri specijaliste.</em></p>
@@ -134,13 +127,13 @@
                 <h2 class="h2 split" data-split>Tri zanata. Jedan tim.</h2>
             </div>
 
-            <article class="chapter" data-bd="softver" data-field="code" data-place="right" data-yaw="-.08">
+            <article class="chapter" data-peek="resources/teksture/scena-softver.webp" data-field="code" data-place="right" data-yaw="-.08">
                 <div class="chapter-in">
                     <div class="chapter-top" data-reveal>
                         <span class="label">Softver</span>
                         <span class="owner"><img src="resources/employees/novica-tim.webp" alt="" loading="lazy">Vodi Novica</span>
                     </div>
-                    <h3 class="split" data-split>Softver</h3>
+                    <h3 class="split tx tx-sjaj" data-split>Softver</h3>
                     <p class="lead" data-reveal>Web aplikacije, custom softver, AI rešenja i consulting. Od backend arhitekture do produkcije.</p>
                     <ul class="svc" data-reveal>
                         <li><b>Backend Development</b><span>Spring Boot, Java, Python, REST API</span></li>
@@ -153,13 +146,13 @@
                 </div>
             </article>
 
-            <article class="chapter" data-bd="dizajn" data-field="design" data-place="right" data-yaw=".08">
+            <article class="chapter" data-peek="resources/teksture/scena-dizajn.webp" data-field="design" data-place="right" data-yaw=".08">
                 <div class="chapter-in">
                     <div class="chapter-top" data-reveal>
                         <span class="label">Dizajn</span>
                         <span class="owner"><img src="resources/employees/bosko-tim.webp" alt="" loading="lazy">Vodi Boško</span>
                     </div>
-                    <h3 class="split" data-split>Dizajn</h3>
+                    <h3 class="split tx tx-traka" data-split>Dizajn</h3>
                     <p class="lead" data-reveal>UI/UX, logo, animacije i video editing. Reklame i motion koji rade u prvoj sekundi.</p>
                     <ul class="svc" data-reveal>
                         <li><b>UI/UX</b><span>Figma, UI Design, Prototyping</span></li>
@@ -172,13 +165,13 @@
                 </div>
             </article>
 
-            <article class="chapter" data-bd="copy" data-field="copy" data-place="right" data-yaw="-.06">
+            <article class="chapter" data-peek="resources/teksture/scena-copy.webp" data-field="copy" data-place="right" data-yaw="-.06">
                 <div class="chapter-in">
                     <div class="chapter-top" data-reveal>
                         <span class="label">Copywriting</span>
                         <span class="owner"><img src="resources/employees/steva-tim.webp" alt="" loading="lazy">Vodi Steva</span>
                     </div>
-                    <h3 class="split" data-split>Copywriting</h3>
+                    <h3 class="split tx tx-metal" data-split>Copywriting</h3>
                     <p class="lead" data-reveal>Prodajni tekstovi, email strategije i ecommerce copy. Reči koje pretvaraju posetioce u kupce.</p>
                     <ul class="svc" data-reveal>
                         <li><b>E-commerce Copy</b><span>Sales Copy, Conversion, E-commerce</span></li>
@@ -289,12 +282,12 @@
             </div>
         </section>
 
-        <section class="marquee" data-bd="kontakt" data-field="" data-place="center" data-dim=".75" aria-label="Fast. Flexible. Fantastic.">
+        <section class="marquee" data-field="" data-place="center" data-dim=".75" aria-label="Fast. Flexible. Fantastic.">
             <div class="mq-row mq-big" data-mq="1" aria-hidden="true"><span>Fast<span class="dot">.</span> <span class="o">Flexible.</span> Fantastic<span class="dot">.</span>&nbsp;</span></div>
             <div class="mq-row mq-words" data-mq="-1" aria-hidden="true"><span>grow</span><i>/</i><span>scale</span><i>/</i><span>convert</span><i>/</i><span>automate</span><i>/</i><span>stand out</span><i>/</i><span>save time</span><i>/</i><span>sell more</span><i>/</i><span>get leads</span><i>/</i><span>build trust</span><i>/</i><span>look premium</span><i>/</i></div>
         </section>
 
-        <section class="contact" id="kontakt" data-bd="kontakt" data-field="logo" data-place="contact" data-yaw=".05" data-dim-m=".3">
+        <section class="contact" id="kontakt" data-field="logo" data-place="contact" data-yaw=".05" data-dim-m=".3">
             <div class="wrap">
                 <div class="contact-in">
                     <p class="label" data-reveal>Kontakt</p>
@@ -321,7 +314,7 @@
         </nav>
     </footer>
 
-    <script src="assets/js/pins.js?v=1"></script>
-    <script src="assets/js/site.js?v=1"></script>
+    <script src="assets/js/pins.js?v=2"></script>
+    <script src="assets/js/site.js?v=2"></script>
 </body>
 </html>

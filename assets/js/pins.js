@@ -6,7 +6,7 @@
 
     var CYAN = [0x11 / 255, 0xce / 255, 0xce / 255];
     var INFRA = [1.0, 0x3e / 255, 0x6c / 255];
-    var BG = [0, 0, 0]; // platno je u screen blendu preko pozadina: crna = providno
+    var BG = [5 / 255, 9 / 255, 11 / 255];
 
     var VS = '#version 300 es\n' +
         'layout(location=0) in vec3 aPos;\n' +
