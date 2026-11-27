@@ -156,6 +156,39 @@
     }
     document.addEventListener('visibilitychange', sections);
 
+
+    /* ---------- pozadine ---------- */
+    var bdEls = $$('[data-bd]'), bdLayers = {}, bdOn = '', bdPortrait = matchMedia('(max-aspect-ratio: 1/1)');
+    $$('[data-bd-layer]').forEach(function (l) { bdLayers[l.getAttribute('data-bd-layer')] = l; });
+    function bdLoad(name) {
+        var l = bdLayers[name];
+        if (!l) return;
+        var src = 'resources/pozadine/' + name + (bdPortrait.matches ? '-m' : '') + '.webp';
+        if (l._src === src) return;
+        l._src = src;
+        l.style.backgroundImage = 'url("' + src + '")';
+    }
+    function bdLoadAll() { Object.keys(bdLayers).forEach(bdLoad); }
+    bdPortrait.addEventListener && bdPortrait.addEventListener('change', function () { if (bdOn) bdLoad(bdOn); setTimeout(bdLoadAll, 300); });
+    function backdrop() {
+        var mid = innerHeight * 0.5, cur = null;
+        bdEls.forEach(function (s) { var r = s.getBoundingClientRect(); if (r.top <= mid && r.bottom > mid) cur = s; });
+        if (!cur) return;
+        var name = cur.getAttribute('data-bd'), l = bdLayers[name];
+        if (!l) return;
+        if (name !== bdOn) {
+            bdLoad(name);
+            if (bdOn && bdLayers[bdOn]) bdLayers[bdOn].classList.remove('is-on');
+            l.classList.add('is-on');
+            bdOn = name;
+        }
+        if (!reduced) {
+            var r = cur.getBoundingClientRect();
+            var p = clamp((mid - r.top) / Math.max(r.height, 1), 0, 1);
+            l.style.setProperty('--py', ((0.5 - p) * innerHeight * 0.06).toFixed(1) + 'px');
+        }
+    }
+
     /* ---------- manifest ---------- */
     var manSec = $('.manifest');
     function manifest() {
@@ -273,6 +306,7 @@
             ring.style.transform = 'translate3d(' + rx.toFixed(1) + 'px,' + ry.toFixed(1) + 'px,0)';
         }
         sections();
+        backdrop();
         manifest();
         marquee(dt);
         letters();
@@ -291,6 +325,8 @@
     function boot() {
         mqMeasure();
         sections();
+        backdrop();
+        addEventListener('load', function () { setTimeout(bdLoadAll, 600); });
         requestAnimationFrame(frame);
         if (!html.classList.contains('is-intro')) {
             startField();
