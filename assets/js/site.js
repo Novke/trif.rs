@@ -117,6 +117,13 @@
         });
     });
 
+    /* ---------- jezik: izbor iz prekidača se pamti i ima prednost nad automatskim (vidi <head> u index.html) ---------- */
+    $$('[data-lang]').forEach(function (a) {
+        a.addEventListener('click', function () {
+            try { localStorage.setItem('3f-lang', a.getAttribute('data-lang')); } catch (e) {}
+        });
+    });
+
     /* ---------- meni ---------- */
     $('.burger').addEventListener('click', function () {
         var open = html.classList.toggle('menu-open');

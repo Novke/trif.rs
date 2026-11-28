@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>3F Solutions | Softver, dizajn i copywriting</title>
+    <meta name="description" content="3F Solutions: softver, dizajn i copywriting iz jednog tima. Vaša vizija, naša realizacija, od ideje do proizvoda koji izgleda vrhunski i radi bez greške.">
+    <meta name="theme-color" content="#05090B">
+    <link rel="canonical" href="https://trif.rs/sr/">
+    <link rel="alternate" hreflang="en" href="https://trif.rs/">
+    <link rel="alternate" hreflang="sr" href="https://trif.rs/sr/">
+    <link rel="alternate" hreflang="x-default" href="https://trif.rs/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://trif.rs/sr/">
+    <meta property="og:locale" content="sr_RS">
+    <meta property="og:title" content="3F Solutions | Fast. Flexible. Fantastic.">
+    <meta property="og:description" content="Softver, dizajn i copywriting iz jednog tima. Vaša vizija, naša realizacija.">
+    <meta property="og:image" content="https://trif.rs/resources/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/svg+xml" href="../resources/logo.svg">
+    <link rel="preload" href="../assets/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/css/site.css?v=6">
+    <script>
+        (function () {
+            var d = document.documentElement, rm = matchMedia('(prefers-reduced-motion: reduce)').matches, seen = false;
+            try { seen = sessionStorage.getItem('3f-intro') === '1'; } catch (e) {}
+            d.className += (seen || rm) ? ' no-intro' : ' is-intro';
+        })();
+    </script>
+</head>
+<body>
+    <div class="intro" id="intro" aria-hidden="true">
+        <div class="intro-bg"></div>
+        <svg class="intro-mark" viewBox="180 135 720 752">
+            <defs>
+                <clipPath id="intro-clip">
+                    <rect x="200.34" y="305.69" width="52.36" height="427.75"/>
+                    <rect x="324.26" y="222" width="52.36" height="595.13"/>
+                    <rect x="446.22" y="155.06" width="52.36" height="711.88"/>
+                    <rect x="566.81" y="155.26" width="312.85" height="52.36"/>
+                    <rect x="566.81" y="451.02" width="223.33" height="52.36"/>
+                </clipPath>
+                <linearGradient id="intro-sweep" x1="0" x2="1" y1="0" y2="0">
+                    <stop offset="0" stop-color="#FF3E6C" stop-opacity="0"/>
+                    <stop offset=".5" stop-color="#FF3E6C"/>
+                    <stop offset=".62" stop-color="#FFD0DB"/>
+                    <stop offset="1" stop-color="#FF3E6C" stop-opacity="0"/>
+                </linearGradient>
+            </defs>
+            <rect class="b" x="200.34" y="305.69" width="52.36" height="427.75"/>
+            <rect class="b" x="324.26" y="222" width="52.36" height="595.13"/>
+            <rect class="b" x="446.22" y="155.06" width="52.36" height="711.88"/>
+            <rect class="a" x="566.81" y="155.26" width="312.85" height="52.36"/>
+            <rect class="a" x="566.81" y="451.02" width="223.33" height="52.36"/>
+            <g clip-path="url(#intro-clip)">
+                <rect class="sweep" x="-80" y="135" width="260" height="752" fill="url(#intro-sweep)"/>
+            </g>
+        </svg>
+        <span class="intro-skip label">Klik za preskok</span>
+    </div>
+
+    <canvas id="field" aria-hidden="true"></canvas>
+    <svg class="field-fallback" viewBox="180 135 720 752" aria-hidden="true">
+        <rect x="200.34" y="305.69" width="52.36" height="427.75"/>
+        <rect x="324.26" y="222" width="52.36" height="595.13"/>
+        <rect x="446.22" y="155.06" width="52.36" height="711.88"/>
+        <rect x="566.81" y="155.26" width="312.85" height="52.36"/>
+        <rect x="566.81" y="451.02" width="223.33" height="52.36"/>
+    </svg>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><span class="cursor-ring"><span class="cursor-label"></span></span><span class="cursor-dot"></span></div>
+
+    <header class="nav" id="nav">
+        <a class="nav-logo" href="#top" aria-label="3F Solutions, na vrh">
+            <svg viewBox="180 135 720 752" aria-hidden="true">
+                <rect class="b" x="200.34" y="305.69" width="52.36" height="427.75"/>
+                <rect class="b" x="324.26" y="222" width="52.36" height="595.13"/>
+                <rect class="b" x="446.22" y="155.06" width="52.36" height="711.88"/>
+                <rect class="a" x="566.81" y="155.26" width="312.85" height="52.36"/>
+                <rect class="a" x="566.81" y="451.02" width="223.33" height="52.36"/>
+            </svg>
+            <span>3F Solutions</span>
+        </a>
+        <nav class="nav-links" aria-label="Glavna navigacija">
+            <a href="#usluge"><span class="roll"><span>Usluge</span></span></a>
+            <a href="#tim"><span class="roll"><span>Tim</span></span></a>
+            <a href="#kako-radimo"><span class="roll"><span>Kako radimo</span></span></a>
+            <a href="#kontakt"><span class="roll"><span>Kontakt</span></span></a>
+        </nav>
+        <a class="lang" href="../" hreflang="en" lang="en" data-lang="en" aria-label="English version"><span class="roll"><span>EN</span></span></a>
+        <a class="btn btn-sm" href="#kontakt" data-magnetic><span class="roll"><span>Pišite nam</span></span> <span class="arr">→</span></a>
+        <button class="burger" type="button" aria-label="Meni" aria-expanded="false"><span></span><span></span></button>
+    </header>
+
+    <div class="menu" id="menu">
+        <a href="#usluge">Usluge</a>
+        <a href="#tim">Tim</a>
+        <a href="#kako-radimo">Kako radimo</a>
+        <a href="#kontakt">Kontakt</a>
+        <a class="menu-lang label" href="../" hreflang="en" lang="en" data-lang="en">English</a>
+        <p class="label">Fast. Flexible. Fantastic.</p>
+    </div>
+
+    <main>
+        <section class="hero" id="top" data-field="logo" data-place="hero" data-dim-m=".35">
+            <p class="label kicker">Softver · Dizajn · Copywriting</p>
+            <h1 class="hero-title" aria-label="Fast. Flexible. Fantastic.">
+                <span class="ln"><span class="ln-in">Fast<span class="dot">.</span></span></span>
+                <span class="ln"><span class="ln-in">Flexible<span class="dot">.</span></span></span>
+                <span class="ln"><span class="ln-in tx tx-tecno">Fantastic<span class="dot">.</span></span></span>
+            </h1>
+            <p class="hero-sub">Softver, dizajn i copywriting iz jednog tima. Vaša vizija, naša realizacija: od ideje do proizvoda koji izgleda vrhunski i radi bez greške.</p>
+            <div class="hero-cta">
+                <a class="btn" href="#kontakt" data-magnetic><span class="roll"><span>Pokrenimo projekat</span></span> <span class="arr">→</span></a>
+                <a class="btn btn-ghost" href="#usluge" data-magnetic><span class="roll"><span>Šta radimo</span></span></a>
+            </div>
+            <div class="hero-foot">
+                <nav class="trio" aria-label="Oblasti">
+                    <a href="#softver"><img src="../resources/employees/novica-tim.webp" alt="" loading="lazy"><span class="t"><b>Softver</b><span>Vodi Novica</span></span></a>
+                    <a href="#dizajn"><img src="../resources/employees/bosko-tim.webp" alt="" loading="lazy"><span class="t"><b>Dizajn</b><span>Vodi Boško</span></span></a>
+                    <a href="#copywriting"><img src="../resources/employees/steva-tim.webp" alt="" loading="lazy"><span class="t"><b>Copywriting</b><span>Vodi Steva</span></span></a>
+                </nav>
+                <span class="hint">Pomerite kursor kroz iglice, kliknite za talas</span>
+            </div>
+        </section>
+
+        <section class="manifest" data-field="bars" data-place="center" data-dim="1">
+            <div class="manifest-pin">
+                <p class="label">3F Solutions</p>
+                <p class="manifest-text" data-manifest>Svaka oblast ima svog čoveka koji je vodi. Vi dobijate <em class="inf">jednog sagovornika</em> i <em class="inf">jedan rok,</em> a iza toga stoje <em class="hi">tri specijaliste.</em></p>
+            </div>
+        </section>
+
+        <section class="services" id="usluge">
+            <div class="services-head">
+                <p class="label" data-reveal>Usluge</p>
+                <h2 class="h2 split" data-split>Tri zanata. Jedan tim.</h2>
+            </div>
+
+            <article class="chapter" id="softver" data-field="code" data-place="right" data-yaw="-.08">
+                <div class="chapter-in">
+                    <div class="chapter-top" data-reveal>
+                        <span class="label">Softver</span>
+                        <span class="owner"><img src="../resources/employees/novica-tim.webp" alt="" loading="lazy">Vodi Novica</span>
+                    </div>
+                    <h3 class="split tx tx-sjaj" data-split>Softver</h3>
+                    <p class="lead" data-reveal>Web aplikacije, custom softver, AI rešenja i consulting. Od backend arhitekture do produkcije.</p>
+                    <figure class="cover" data-reveal aria-hidden="true"><img src="../resources/teksture/scena-softver.webp" alt="" loading="lazy" style="object-position:50% 0%"></figure>
+                    <ul class="svc" data-reveal>
+                        <li><b>Backend Development</b><span>Spring Boot, Java, Python, REST API</span></li>
+                        <li><b>Web Aplikacije</b><span>Angular, TypeScript, PostgreSQL, MySQL</span></li>
+                        <li><b>AI Integracije</b><span>LLM, Claude, OpenAI, FastAPI, MCP</span></li>
+                        <li><b>DevOps &amp; Cloud</b><span>Docker, CI/CD, Google Cloud, AWS</span></li>
+                        <li><b>Automatizacija Procesa</b><span>Python, Scripting, Automation</span></li>
+                        <li><b>Consulting</b><span>Architecture, SOLID, Microservices</span></li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="chapter" id="dizajn" data-field="design" data-place="right" data-yaw=".08">
+                <div class="chapter-in">
+                    <div class="chapter-top" data-reveal>
+                        <span class="label">Dizajn</span>
+                        <span class="owner"><img src="../resources/employees/bosko-tim.webp" alt="" loading="lazy">Vodi Boško</span>
+                    </div>
+                    <h3 class="split tx tx-traka" data-split>Dizajn</h3>
+                    <p class="lead" data-reveal>UI/UX, logo, animacije i video editing. Reklame i motion koji rade u prvoj sekundi.</p>
+                    <figure class="cover" data-reveal aria-hidden="true"><img src="../resources/teksture/scena-dizajn.webp" alt="" loading="lazy" style="object-position:50% 62%"></figure>
+                    <ul class="svc" data-reveal>
+                        <li><b>UI/UX</b><span>Figma, UI Design, Prototyping</span></li>
+                        <li><b>Branding &amp; Logo</b><span>Illustrator, Brand Identity, Logo</span></li>
+                        <li><b>Animacije</b><span>After Effects, Motion Design</span></li>
+                        <li><b>Video Editing</b><span>Premiere Pro, Color Grading</span></li>
+                        <li><b>NFT &amp; Web3</b><span>NFT, Web3, Digital Art</span></li>
+                        <li><b>Digitalni Vizuali</b><span>Photoshop, Social Media, Marketing</span></li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="chapter" id="copywriting" data-field="copy" data-place="right" data-yaw="-.06">
+                <div class="chapter-in">
+                    <div class="chapter-top" data-reveal>
+                        <span class="label">Copywriting</span>
+                        <span class="owner"><img src="../resources/employees/steva-tim.webp" alt="" loading="lazy">Vodi Steva</span>
+                    </div>
+                    <h3 class="split tx tx-metal" data-split>Copywriting</h3>
+                    <p class="lead" data-reveal>Prodajni tekstovi, email strategije i ecommerce copy. Reči koje pretvaraju posetioce u kupce.</p>
+                    <figure class="cover" data-reveal aria-hidden="true"><img src="../resources/teksture/scena-copy.webp" alt="" loading="lazy" style="object-position:50% 50%"></figure>
+                    <ul class="svc" data-reveal>
+                        <li><b>E-commerce Copy</b><span>Sales Copy, Conversion, E-commerce</span></li>
+                        <li><b>Email Marketing</b><span>Email Sequences, Newsletters, Automation</span></li>
+                        <li><b>Offer Creation</b><span>Offer Design, Pricing, Strategy</span></li>
+                        <li><b>Revenue Strategy</b><span>Revenue, Funnels, Upsells</span></li>
+                    </ul>
+                    <div class="rewrite" data-reveal data-rewrite>
+                        <s>Nudimo kvalitetne usluge po povoljnim cenama.</s>
+                        <p data-type>Vaš sajt radi i dok vi spavate. Pobrinućemo se da i prodaje.</p>
+                        <small>Ista poruka, drugi tekst. To radi Steva.</small>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="team" id="tim" data-solid>
+            <div class="wrap">
+                <div class="team-head">
+                    <div>
+                        <p class="label" data-reveal>Tim</p>
+                        <h2 class="h2 split" data-split>Upoznajte naš tim.</h2>
+                    </div>
+                </div>
+                <div class="crew" data-crew>
+                    <article class="member is-open" tabindex="0">
+                        <img src="../resources/employees/novica-tim.webp" alt="Novica Trifković" loading="lazy">
+                        <div class="member-in">
+                            <span class="role">Software engineer</span>
+                            <h3>Novica Trifković</h3>
+                            <div class="member-more"><div>
+                                <p>Back End · AI · DevOps</p>
+                                <p class="skills">Backend • Web aplikacije • AI integracije • DevOps &amp; Cloud • Consulting</p>
+                                <div class="member-links">
+                                    <a class="chip" href="https://novica.trif.rs" target="_blank" rel="noopener"><img src="../resources/sajtovi/novica.webp" alt="" loading="lazy">novica.trif.rs</a>
+                                    <a class="chip" href="mailto:novicatrifkovic@gmail.com"><span class="ic">@</span>Email</a>
+                                </div>
+                            </div></div>
+                        </div>
+                    </article>
+                    <article class="member" tabindex="0">
+                        <img src="../resources/employees/bosko-tim.webp" alt="Boško Kosić" loading="lazy">
+                        <div class="member-in">
+                            <span class="role">Motion i AI creative designer</span>
+                            <h3>Boško Kosić</h3>
+                            <div class="member-more"><div>
+                                <p>Reklame i motion koji rade u prvoj sekundi.</p>
+                                <p class="skills">UI/UX dizajn • Vizuali • Animacije • Video editing • NFT</p>
+                                <div class="member-links">
+                                    <a class="chip" href="https://bosko.trif.rs" target="_blank" rel="noopener"><img src="../resources/sajtovi/bosko.webp" alt="" loading="lazy">bosko.trif.rs</a>
+                                    <a class="chip" href="mailto:boskokosic187@gmail.com"><span class="ic">@</span>Email</a>
+                                </div>
+                            </div></div>
+                        </div>
+                    </article>
+                    <article class="member" tabindex="0">
+                        <img src="../resources/employees/steva-tim.webp" alt="Steva" loading="lazy">
+                        <div class="member-in">
+                            <span class="role">Copywriter</span>
+                            <h3>Steva</h3>
+                            <div class="member-more"><div>
+                                <p>Reči koje pretvaraju posetioce u kupce.</p>
+                                <p class="skills">Prodajni tekstovi • Email strategije • Ecommerce copy • Offer creation</p>
+                                <div class="member-links">
+                                    <a class="chip" href="mailto:stevanvelickovic21@gmail.com"><span class="ic">@</span>Email</a>
+                                </div>
+                            </div></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="process" id="kako-radimo" data-solid data-light>
+            <div class="wrap">
+                <div class="process-head">
+                    <p class="label" data-reveal>Kako radimo</p>
+                    <h2 class="h2 split" data-split>Zajedno stvaramo više.</h2>
+                    <p class="lead" data-reveal>Komplementarne veštine za sve potrebe vašeg projekta.</p>
+                </div>
+                <div class="flows">
+                    <div class="flow" data-flow>
+                        <h3>Kompletna Web Aplikacija</h3>
+                        <div class="relay" style="--dur:4.2s">
+                            <i class="pulse"></i>
+                            <div class="node"><div class="av"><img src="../resources/employees/bosko-tim.webp" alt="" loading="lazy"></div><b>Boško</b><span>UI/UX dizajn</span></div>
+                            <div class="node"><div class="av"><img src="../resources/employees/novica-tim.webp" alt="" loading="lazy"></div><b>Novica</b><span>Full-stack development</span></div>
+                            <div class="node"><div class="av"><img src="../resources/employees/steva-tim.webp" alt="" loading="lazy"></div><b>Steva</b><span>Prodajni tekstovi i marketing copy</span></div>
+                        </div>
+                    </div>
+                    <div class="flow" data-flow>
+                        <h3>Marketing Kampanja</h3>
+                        <div class="relay" style="--dur:3.2s">
+                            <i class="pulse"></i>
+                            <div class="node"><div class="av"><img src="../resources/employees/steva-tim.webp" alt="" loading="lazy"></div><b>Steva</b><span>Copywriting strategija</span></div>
+                            <div class="node"><div class="av"><img src="../resources/employees/bosko-tim.webp" alt="" loading="lazy"></div><b>Boško</b><span>Vizualni materijali i animacije</span></div>
+                        </div>
+                    </div>
+                    <div class="flow" data-flow>
+                        <h3>Web Sajt</h3>
+                        <div class="relay" style="--dur:3.2s">
+                            <i class="pulse"></i>
+                            <div class="node"><div class="av"><img src="../resources/employees/bosko-tim.webp" alt="" loading="lazy"></div><b>Boško</b><span>Dizajn i branding</span></div>
+                            <div class="node"><div class="av"><img src="../resources/employees/novica-tim.webp" alt="" loading="lazy"></div><b>Novica</b><span>Frontend implementacija i deployment</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="marquee" data-field="" data-place="center" data-dim=".75" aria-label="Fast. Flexible. Fantastic.">
+            <div class="mq-row mq-big" data-mq="1" aria-hidden="true"><span>Fast<span class="dot">.</span> <span class="o">Flexible.</span> Fantastic<span class="dot">.</span>&nbsp;</span></div>
+            <div class="mq-row mq-words" data-mq="-1" aria-hidden="true"><span>grow</span><i>/</i><span>scale</span><i>/</i><span>convert</span><i>/</i><span>automate</span><i>/</i><span>stand out</span><i>/</i><span>save time</span><i>/</i><span>sell more</span><i>/</i><span>get leads</span><i>/</i><span>build trust</span><i>/</i><span>look premium</span><i>/</i></div>
+        </section>
+
+        <section class="contact" id="kontakt" data-field="logo" data-place="contact" data-yaw=".05" data-dim-m=".3">
+            <div class="wrap">
+                <div class="contact-in">
+                    <p class="label" data-reveal>Kontakt</p>
+                    <h2 class="h2 split" data-split>Imate ideju? Hajde da je napravimo.</h2>
+                    <p class="lead" data-reveal>Opišite u dve rečenice šta vam treba. Javljamo se da dogovorimo kratak poziv i predložimo kako da krenemo.</p>
+                    <div data-reveal>
+                        <a class="btn" href="mailto:novicatrifkovic@gmail.com?subject=Upit%20za%203F%20Solutions" data-magnetic><span class="roll"><span>Pošaljite upit</span></span> <span class="arr">→</span></a>
+                    </div>
+                    <ul class="direct" data-reveal>
+                        <li><a href="mailto:novicatrifkovic@gmail.com"><b>Novica</b><span>Softver i web aplikacije</span></a></li>
+                        <li><a href="mailto:boskokosic187@gmail.com"><b>Boško</b><span>Dizajn, animacije i video</span></a></li>
+                        <li><a href="mailto:stevanvelickovic21@gmail.com"><b>Steva</b><span>Copywriting i email</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a class="footer-mark" href="#top" aria-label="3F Solutions, na vrh" data-reveal>
+            <svg viewBox="180 135 720 752" aria-hidden="true">
+                <rect class="b" x="200.34" y="305.69" width="52.36" height="427.75"/>
+                <rect class="b" x="324.26" y="222" width="52.36" height="595.13"/>
+                <rect class="b" x="446.22" y="155.06" width="52.36" height="711.88"/>
+                <rect class="a" x="566.81" y="155.26" width="312.85" height="52.36"/>
+                <rect class="a" x="566.81" y="451.02" width="223.33" height="52.36"/>
+            </svg>
+            <span>3F Solutions</span>
+        </a>
+        <div class="footer-bar">
+            <span>© 2026 3F Solutions · trif.rs</span>
+            <span>Fast. Flexible. Fantastic.</span>
+            <nav aria-label="Linkovi">
+                <a class="foot-lang" href="../" hreflang="en" lang="en" data-lang="en"><span class="roll"><span>English</span></span></a>
+                <a href="https://novica.trif.rs" target="_blank" rel="noopener"><span class="roll"><span>novica.trif.rs</span></span></a>
+                <a href="https://bosko.trif.rs" target="_blank" rel="noopener"><span class="roll"><span>bosko.trif.rs</span></span></a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../assets/js/pins.js?v=6"></script>
+    <script src="../assets/js/site.js?v=6"></script>
+</body>
+</html>
